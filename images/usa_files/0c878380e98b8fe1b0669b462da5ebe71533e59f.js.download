@@ -1,0 +1,931 @@
+dimml.baseDynamic=function(){return '//baltar.dimml.io'};(function(){var preMatch=function(doMatch){
+
+    /* Qmon client-side collection library */
+
+    window.qmon = window.qmon || (function () {
+
+        // Analytics functionality
+        var analytics = (function () {
+            var adobe = (function () {
+                var getAppMeasurement = function () {
+                    try {
+                        var possibleLocations = [window.s, window.s_c_il];
+
+                        var identifyCatalyst = function (thisObject) {
+                            var hasPixelname = (typeof thisObject.visitorNamespace !== 'undefined' || typeof thisObject.account !== 'undefined');
+                            var hasTrackingFunction = typeof thisObject.t === "function";
+
+                            return hasPixelname && hasTrackingFunction;
+                        }
+
+                        var findInPossibleLocations = function (acc, location) {
+                            if (location && location.constructor === Array) {
+                                var found = location.filter(identifyCatalyst);
+                                acc.push.apply(acc, found);
+                            } else {
+                                if (location && identifyCatalyst(location)) {
+                                    acc.push(location);
+                                }
+                            }
+                            return acc;
+                        }
+
+                        var searchResult = possibleLocations.reduce(findInPossibleLocations, []);
+
+                        return searchResult.length > 0 ? searchResult[0] : false;
+                    } catch (e) {
+                        log(e, "error");
+                    }
+                };
+
+                var qmonCallback = function (requestUrl, am) {
+                    qmon.log("Qmon callback was triggered with " + arguments.length + " arguments: " + JSON.stringify(requestUrl));
+
+                    window.qmondeq = window.qmondeq || [];
+                    for (i = arguments.length - 1; i >= 0; i--) {
+                        window.qmondeq.push(arguments[i]);
+                    }
+                };
+
+                var hookAppMeasurement = function (am) {
+                    if (typeof am !== "undefined") {
+                        am.registerPostTrackCallback(qmon.analytics.adobe.callback);
+                        qmon.log("Registered qmon callback on AppMeasurement object!", "info");
+                    } else {
+                        qmon.log("AppMeasurement object is undefined.", "warn");
+                    }
+                };
+
+                // transitional function/hotfix function
+                var fakePixelsFromURI = function (hash) {
+                  var pixelUrls = [].concat(window.qmon.analytics.adobe.pixelUrls);
+                  
+                  var validPixelsForHash = [];
+                  for (var i = 0; i < pixelUrls.length; i += 1) {
+                    if (pixelUrls[i]['usedBy'].indexOf(hash) === -1) {
+                      validPixelsForHash.push(pixelUrls[i]);
+                      pixelUrls[i]['usedBy'].push(hash);
+                    }
+                  }
+                  
+				  return validPixelsForHash;
+                };
+
+                return {
+                    id: "Adobe Analytics to Qmon Connector 1.0",
+                    getAppMeasurement: getAppMeasurement,
+                    callback: qmonCallback,
+                    hookAppMeasurement: hookAppMeasurement,
+                    pixelUrls: [],
+                    pixels: fakePixelsFromURI
+                };
+            })();
+
+            var google = (function () {
+                var googleCallback = function () {};
+
+                return {
+                    id: "Google Analytics to Qmon Connector 1.0",
+                    callback: googleCallback
+                };
+            })();
+
+            return {
+                adobe: adobe,
+                google: google
+            };
+        })();
+
+        // Data collection functions
+        var collection = (function () {
+            var hasDimml = function () {
+                return (window && window.dimml);
+            };
+
+            // Here, we play nice
+            var grabFromDom = function (domLocation) {
+                if (typeof domLocation !== "undefined") {
+                    return JSON.stringify(domLocation);
+                }
+            };
+
+            // Here, we don't.
+            var ripFromDom = function (domLocation, blacklist) {
+                var _copy = {};
+                for (var i in domLocation) _copy[i] = domLocation[i];
+
+                var blacklist = blacklist || [];
+                for (var j = 0; j < blacklist.length; j++) {
+                    if (typeof _copy[blacklist[j]] !== "undefined") {
+                        delete _copy[blacklist[j]];
+                    }
+                }
+                return JSON.stringify(_copy);
+            };
+
+            var pixelStore = [];
+
+            return {
+                hasDimml:  hasDimml,
+                grab: grabFromDom,
+                rip: ripFromDom,
+                pixels: pixelStore
+            };
+        })();
+
+        // Utility functions
+        var util = (function () {
+            var findDimml = function () {
+                return window && typeof window.dimml !== "undefined";
+            };
+
+            var log = function (message, level) {
+                var levels = ["log", "info", "warn", "error"];
+                var level = levels.indexOf(level) > -1 ? level : "log";
+                var msg = typeof message == "string" ? message : JSON.stringify(message);
+                var flag = "qmon :: ";
+
+                qmon.logging && console[level](flag + level + " :: " + msg);
+            };
+
+            return {
+                hasDimml: findDimml,
+                log: log
+            };
+        })();
+
+        // DEQ functions
+        var deq = (function () {
+            var createDEQ = function(queueName) {
+    
+                // safely initialise the queue object (both local and global scope)
+                var deq = window[queueName] = window[queueName] || [];
+                
+                // make sure this digital event queue initialises only once
+                if(!deq.init) {
+            
+                    // set deq initialised flag
+                    deq.init = true;
+            
+                    // Initialise listeners storage and function to add a listener 
+                    deq.li = [];        
+                    deq.addListener = function(eventName,callback){
+            
+                        var deq = this;
+            
+                        // Check input
+                        if(typeof(eventName)=="string" && typeof(callback)=="function") {
+            
+                            // Add event listener
+                            deq.li.push([eventName,callback]);
+            
+                            // Run through event history
+                            for (var i=0; i<deq.ev.length; i++) {
+            
+                                // If event present, trigger callback function
+                                if(eventName == deq.ev[i][0] || eventName == "*") {
+                                    callback(deq.ev[i][0],deq.ev[i][1]);
+                                }
+                            }
+                        }
+                    };
+                
+                    // Initialise event storage and function to add an event
+                    deq.ev = [];
+                    deq.addEvent = function(eventName,eventData) {
+                        if(typeof(eventName)=="string" && eventName!=="" && (typeof(eventData)=="undefined"||typeof(eventData)=="object")) {
+                            eventData = eventData || {};
+                            var deq = this;
+            
+                            // store a copy of the event in the event history
+                            var defensiveCopy = JSON.parse(JSON.stringify(eventData));
+                            deq.ev.push( [eventName,defensiveCopy] );
+            
+                            // Run through event listeners
+                            for (var i=0, len=deq.li.length; i<len; i++) {
+            
+                                // If event present, trigger callback function
+                                if(eventName == deq.li[i][0] || deq.li[i][0] == "*") {
+                                    deq.li[i][1](eventName,defensiveCopy);
+                                }
+                            }
+                        }
+                    };
+                    
+                    // Overwrite the default Array.push function
+                    deq.push = function(commandArr) {
+                        
+                        // Expected calls:
+                        // deq.push( ["event",eventName,eventData] )
+                        // deq.push( ["listener",eventName,callback] )
+                        
+                        // test input
+                        if( commandArr && Object.prototype.toString.call(commandArr) === '[object Array]') {
+            
+                            // call addEvent for event commands
+                            if(commandArr[0]=="event") {
+                                deq.addEvent(commandArr[1],commandArr[2]);
+                            }
+                            
+                            // call addListener for listener commands
+                            if (commandArr[0]=="listener") {
+                                deq.addListener(commandArr[1],commandArr[2]);
+                            }
+                        }
+                    };
+            
+                    // Process commands that were registered before the push function was overwritten
+                    while(deq.length>0) {
+                        deq.push(deq.shift());
+                    }
+                }
+            };
+
+            var create = function(queueName) {
+                if (typeof queueName == "undefined") {
+                    createDEQ(qmon.config.deq.queueName);
+                } else {
+                    createDEQ(queueName);
+                }
+            };
+
+            var sendToDimml = function(pixel) {
+                var pixelData = qmon.util.pixelToData(pixel);
+                pixelData && dimml.event('dataSubmit', {data: {}, ua: JSON.stringify(navigator.userAgent), }, 'flow');
+            };
+
+            return {
+                create: create,
+                send: sendToDimml
+            };
+        })();
+
+        var config = {
+            deq: {
+                enabled: true,
+                queueName: "qmondeq"
+            }
+        };
+
+        /**
+        * Public "window.qmon" api
+        */
+        return {
+            analytics: analytics,
+            collection: collection,
+            deq: deq,
+            logging: false,
+            log: util.log,
+            util: util,
+            version: "2.1.1",
+            config: config
+        };
+
+    })();
+    
+    /*---------------------------------------*/
+
+    if (window.dimml && typeof window.dimml._load === 'undefined' &&  window.dimml.load) {
+        var maxUrlLength = 32 * 1024;
+
+        window.dimml._load = window.dimml.load;
+        window.dimml.load = function () {
+            if (arguments[0] && arguments[0].length <= maxUrlLength) {
+                window.dimml._load.apply(this, arguments);
+            } else {
+                console.log("A GET request sent to dimml was too long and got discarded. (" +
+                Math.ceil(arguments[0].length / 1024) + "k > 32k)");
+            }
+        };
+    }
+
+    // If window.load was triggered, match immediately. Else, wait for the load event.
+    if (document.readyState === "complete") {
+        doMatch();
+    } else if (window.addEventListener) {
+        window.addEventListener("load", doMatch, false);
+    } else if (window.attachEvent) {
+        window.attachEvent("onload", doMatch);
+    }
+
+};preMatch(function(){if(dimml.match('*')){dimml.send({},'static',null,'09df860bc686a2c5b2f0d123b30aec5855656405')}});})();(function(){var preMatch=function(doMatch){
+
+    /* Qmon client-side collection library */
+
+    window.qmon = window.qmon || (function () {
+
+        // Analytics functionality
+        var analytics = (function () {
+            var adobe = (function () {
+                var getAppMeasurement = function () {
+                    try {
+                        var possibleLocations = [window.s, window.s_c_il];
+
+                        var identifyCatalyst = function (thisObject) {
+                            var hasPixelname = (typeof thisObject.visitorNamespace !== 'undefined' || typeof thisObject.account !== 'undefined');
+                            var hasTrackingFunction = typeof thisObject.t === "function";
+
+                            return hasPixelname && hasTrackingFunction;
+                        }
+
+                        var findInPossibleLocations = function (acc, location) {
+                            if (location && location.constructor === Array) {
+                                var found = location.filter(identifyCatalyst);
+                                acc.push.apply(acc, found);
+                            } else {
+                                if (location && identifyCatalyst(location)) {
+                                    acc.push(location);
+                                }
+                            }
+                            return acc;
+                        }
+
+                        var searchResult = possibleLocations.reduce(findInPossibleLocations, []);
+
+                        return searchResult.length > 0 ? searchResult[0] : false;
+                    } catch (e) {
+                        log(e, "error");
+                    }
+                };
+
+                var qmonCallback = function (requestUrl, am) {
+                    qmon.log("Qmon callback was triggered with " + arguments.length + " arguments: " + JSON.stringify(requestUrl));
+
+                    window.qmondeq = window.qmondeq || [];
+                    for (i = arguments.length - 1; i >= 0; i--) {
+                        window.qmondeq.push(arguments[i]);
+                    }
+                };
+
+                var hookAppMeasurement = function (am) {
+                    if (typeof am !== "undefined") {
+                        am.registerPostTrackCallback(qmon.analytics.adobe.callback);
+                        qmon.log("Registered qmon callback on AppMeasurement object!", "info");
+                    } else {
+                        qmon.log("AppMeasurement object is undefined.", "warn");
+                    }
+                };
+
+                // transitional function/hotfix function
+                var fakePixelsFromURI = function (hash) {
+                  var pixelUrls = [].concat(window.qmon.analytics.adobe.pixelUrls);
+                  
+                  var validPixelsForHash = [];
+                  for (var i = 0; i < pixelUrls.length; i += 1) {
+                    if (pixelUrls[i]['usedBy'].indexOf(hash) === -1) {
+                      validPixelsForHash.push(pixelUrls[i]);
+                      pixelUrls[i]['usedBy'].push(hash);
+                    }
+                  }
+                  
+				  return validPixelsForHash;
+                };
+
+                return {
+                    id: "Adobe Analytics to Qmon Connector 1.0",
+                    getAppMeasurement: getAppMeasurement,
+                    callback: qmonCallback,
+                    hookAppMeasurement: hookAppMeasurement,
+                    pixelUrls: [],
+                    pixels: fakePixelsFromURI
+                };
+            })();
+
+            var google = (function () {
+                var googleCallback = function () {};
+
+                return {
+                    id: "Google Analytics to Qmon Connector 1.0",
+                    callback: googleCallback
+                };
+            })();
+
+            return {
+                adobe: adobe,
+                google: google
+            };
+        })();
+
+        // Data collection functions
+        var collection = (function () {
+            var hasDimml = function () {
+                return (window && window.dimml);
+            };
+
+            // Here, we play nice
+            var grabFromDom = function (domLocation) {
+                if (typeof domLocation !== "undefined") {
+                    return JSON.stringify(domLocation);
+                }
+            };
+
+            // Here, we don't.
+            var ripFromDom = function (domLocation, blacklist) {
+                var _copy = {};
+                for (var i in domLocation) _copy[i] = domLocation[i];
+
+                var blacklist = blacklist || [];
+                for (var j = 0; j < blacklist.length; j++) {
+                    if (typeof _copy[blacklist[j]] !== "undefined") {
+                        delete _copy[blacklist[j]];
+                    }
+                }
+                return JSON.stringify(_copy);
+            };
+
+            var pixelStore = [];
+
+            return {
+                hasDimml:  hasDimml,
+                grab: grabFromDom,
+                rip: ripFromDom,
+                pixels: pixelStore
+            };
+        })();
+
+        // Utility functions
+        var util = (function () {
+            var findDimml = function () {
+                return window && typeof window.dimml !== "undefined";
+            };
+
+            var log = function (message, level) {
+                var levels = ["log", "info", "warn", "error"];
+                var level = levels.indexOf(level) > -1 ? level : "log";
+                var msg = typeof message == "string" ? message : JSON.stringify(message);
+                var flag = "qmon :: ";
+
+                qmon.logging && console[level](flag + level + " :: " + msg);
+            };
+
+            return {
+                hasDimml: findDimml,
+                log: log
+            };
+        })();
+
+        // DEQ functions
+        var deq = (function () {
+            var createDEQ = function(queueName) {
+    
+                // safely initialise the queue object (both local and global scope)
+                var deq = window[queueName] = window[queueName] || [];
+                
+                // make sure this digital event queue initialises only once
+                if(!deq.init) {
+            
+                    // set deq initialised flag
+                    deq.init = true;
+            
+                    // Initialise listeners storage and function to add a listener 
+                    deq.li = [];        
+                    deq.addListener = function(eventName,callback){
+            
+                        var deq = this;
+            
+                        // Check input
+                        if(typeof(eventName)=="string" && typeof(callback)=="function") {
+            
+                            // Add event listener
+                            deq.li.push([eventName,callback]);
+            
+                            // Run through event history
+                            for (var i=0; i<deq.ev.length; i++) {
+            
+                                // If event present, trigger callback function
+                                if(eventName == deq.ev[i][0] || eventName == "*") {
+                                    callback(deq.ev[i][0],deq.ev[i][1]);
+                                }
+                            }
+                        }
+                    };
+                
+                    // Initialise event storage and function to add an event
+                    deq.ev = [];
+                    deq.addEvent = function(eventName,eventData) {
+                        if(typeof(eventName)=="string" && eventName!=="" && (typeof(eventData)=="undefined"||typeof(eventData)=="object")) {
+                            eventData = eventData || {};
+                            var deq = this;
+            
+                            // store a copy of the event in the event history
+                            var defensiveCopy = JSON.parse(JSON.stringify(eventData));
+                            deq.ev.push( [eventName,defensiveCopy] );
+            
+                            // Run through event listeners
+                            for (var i=0, len=deq.li.length; i<len; i++) {
+            
+                                // If event present, trigger callback function
+                                if(eventName == deq.li[i][0] || deq.li[i][0] == "*") {
+                                    deq.li[i][1](eventName,defensiveCopy);
+                                }
+                            }
+                        }
+                    };
+                    
+                    // Overwrite the default Array.push function
+                    deq.push = function(commandArr) {
+                        
+                        // Expected calls:
+                        // deq.push( ["event",eventName,eventData] )
+                        // deq.push( ["listener",eventName,callback] )
+                        
+                        // test input
+                        if( commandArr && Object.prototype.toString.call(commandArr) === '[object Array]') {
+            
+                            // call addEvent for event commands
+                            if(commandArr[0]=="event") {
+                                deq.addEvent(commandArr[1],commandArr[2]);
+                            }
+                            
+                            // call addListener for listener commands
+                            if (commandArr[0]=="listener") {
+                                deq.addListener(commandArr[1],commandArr[2]);
+                            }
+                        }
+                    };
+            
+                    // Process commands that were registered before the push function was overwritten
+                    while(deq.length>0) {
+                        deq.push(deq.shift());
+                    }
+                }
+            };
+
+            var create = function(queueName) {
+                if (typeof queueName == "undefined") {
+                    createDEQ(qmon.config.deq.queueName);
+                } else {
+                    createDEQ(queueName);
+                }
+            };
+
+            var sendToDimml = function(pixel) {
+                var pixelData = qmon.util.pixelToData(pixel);
+                pixelData && dimml.event('dataSubmit', {data: {}, ua: JSON.stringify(navigator.userAgent), }, 'flow');
+            };
+
+            return {
+                create: create,
+                send: sendToDimml
+            };
+        })();
+
+        var config = {
+            deq: {
+                enabled: true,
+                queueName: "qmondeq"
+            }
+        };
+
+        /**
+        * Public "window.qmon" api
+        */
+        return {
+            analytics: analytics,
+            collection: collection,
+            deq: deq,
+            logging: false,
+            log: util.log,
+            util: util,
+            version: "2.1.1",
+            config: config
+        };
+
+    })();
+    
+    /*---------------------------------------*/
+
+    if (window.dimml && typeof window.dimml._load === 'undefined' &&  window.dimml.load) {
+        var maxUrlLength = 32 * 1024;
+
+        window.dimml._load = window.dimml.load;
+        window.dimml.load = function () {
+            if (arguments[0] && arguments[0].length <= maxUrlLength) {
+                window.dimml._load.apply(this, arguments);
+            } else {
+                console.log("A GET request sent to dimml was too long and got discarded. (" +
+                Math.ceil(arguments[0].length / 1024) + "k > 32k)");
+            }
+        };
+    }
+
+    // If window.load was triggered, match immediately. Else, wait for the load event.
+    if (document.readyState === "complete") {
+        doMatch();
+    } else if (window.addEventListener) {
+        window.addEventListener("load", doMatch, false);
+    } else if (window.attachEvent) {
+        window.attachEvent("onload", doMatch);
+    }
+
+};preMatch(function(){if(dimml.match('*')){dimml.send({},'static',null,'09df860b1102e58a62d580eaaa6f5d08c6233cce')}});})();(function(){var preMatch=function(doMatch){
+
+    /* Qmon client-side collection library */
+
+    window.qmon = window.qmon || (function () {
+
+        // Analytics functionality
+        var analytics = (function () {
+            var adobe = (function () {
+                var getAppMeasurement = function () {
+                    try {
+                        var possibleLocations = [window.s, window.s_c_il];
+
+                        var identifyCatalyst = function (thisObject) {
+                            var hasPixelname = (typeof thisObject.visitorNamespace !== 'undefined' || typeof thisObject.account !== 'undefined');
+                            var hasTrackingFunction = typeof thisObject.t === "function";
+
+                            return hasPixelname && hasTrackingFunction;
+                        }
+
+                        var findInPossibleLocations = function (acc, location) {
+                            if (location && location.constructor === Array) {
+                                var found = location.filter(identifyCatalyst);
+                                acc.push.apply(acc, found);
+                            } else {
+                                if (location && identifyCatalyst(location)) {
+                                    acc.push(location);
+                                }
+                            }
+                            return acc;
+                        }
+
+                        var searchResult = possibleLocations.reduce(findInPossibleLocations, []);
+
+                        return searchResult.length > 0 ? searchResult[0] : false;
+                    } catch (e) {
+                        log(e, "error");
+                    }
+                };
+
+                var qmonCallback = function (requestUrl, am) {
+                    qmon.log("Qmon callback was triggered with " + arguments.length + " arguments: " + JSON.stringify(requestUrl));
+
+                    window.qmondeq = window.qmondeq || [];
+                    for (i = arguments.length - 1; i >= 0; i--) {
+                        window.qmondeq.push(arguments[i]);
+                    }
+                };
+
+                var hookAppMeasurement = function (am) {
+                    if (typeof am !== "undefined") {
+                        am.registerPostTrackCallback(qmon.analytics.adobe.callback);
+                        qmon.log("Registered qmon callback on AppMeasurement object!", "info");
+                    } else {
+                        qmon.log("AppMeasurement object is undefined.", "warn");
+                    }
+                };
+
+                // transitional function/hotfix function
+                var fakePixelsFromURI = function (hash) {
+                  var pixelUrls = [].concat(window.qmon.analytics.adobe.pixelUrls);
+                  
+                  var validPixelsForHash = [];
+                  for (var i = 0; i < pixelUrls.length; i += 1) {
+                    if (pixelUrls[i]['usedBy'].indexOf(hash) === -1) {
+                      validPixelsForHash.push(pixelUrls[i]);
+                      pixelUrls[i]['usedBy'].push(hash);
+                    }
+                  }
+                  
+				  return validPixelsForHash;
+                };
+
+                return {
+                    id: "Adobe Analytics to Qmon Connector 1.0",
+                    getAppMeasurement: getAppMeasurement,
+                    callback: qmonCallback,
+                    hookAppMeasurement: hookAppMeasurement,
+                    pixelUrls: [],
+                    pixels: fakePixelsFromURI
+                };
+            })();
+
+            var google = (function () {
+                var googleCallback = function () {};
+
+                return {
+                    id: "Google Analytics to Qmon Connector 1.0",
+                    callback: googleCallback
+                };
+            })();
+
+            return {
+                adobe: adobe,
+                google: google
+            };
+        })();
+
+        // Data collection functions
+        var collection = (function () {
+            var hasDimml = function () {
+                return (window && window.dimml);
+            };
+
+            // Here, we play nice
+            var grabFromDom = function (domLocation) {
+                if (typeof domLocation !== "undefined") {
+                    return JSON.stringify(domLocation);
+                }
+            };
+
+            // Here, we don't.
+            var ripFromDom = function (domLocation, blacklist) {
+                var _copy = {};
+                for (var i in domLocation) _copy[i] = domLocation[i];
+
+                var blacklist = blacklist || [];
+                for (var j = 0; j < blacklist.length; j++) {
+                    if (typeof _copy[blacklist[j]] !== "undefined") {
+                        delete _copy[blacklist[j]];
+                    }
+                }
+                return JSON.stringify(_copy);
+            };
+
+            var pixelStore = [];
+
+            return {
+                hasDimml:  hasDimml,
+                grab: grabFromDom,
+                rip: ripFromDom,
+                pixels: pixelStore
+            };
+        })();
+
+        // Utility functions
+        var util = (function () {
+            var findDimml = function () {
+                return window && typeof window.dimml !== "undefined";
+            };
+
+            var log = function (message, level) {
+                var levels = ["log", "info", "warn", "error"];
+                var level = levels.indexOf(level) > -1 ? level : "log";
+                var msg = typeof message == "string" ? message : JSON.stringify(message);
+                var flag = "qmon :: ";
+
+                qmon.logging && console[level](flag + level + " :: " + msg);
+            };
+
+            return {
+                hasDimml: findDimml,
+                log: log
+            };
+        })();
+
+        // DEQ functions
+        var deq = (function () {
+            var createDEQ = function(queueName) {
+    
+                // safely initialise the queue object (both local and global scope)
+                var deq = window[queueName] = window[queueName] || [];
+                
+                // make sure this digital event queue initialises only once
+                if(!deq.init) {
+            
+                    // set deq initialised flag
+                    deq.init = true;
+            
+                    // Initialise listeners storage and function to add a listener 
+                    deq.li = [];        
+                    deq.addListener = function(eventName,callback){
+            
+                        var deq = this;
+            
+                        // Check input
+                        if(typeof(eventName)=="string" && typeof(callback)=="function") {
+            
+                            // Add event listener
+                            deq.li.push([eventName,callback]);
+            
+                            // Run through event history
+                            for (var i=0; i<deq.ev.length; i++) {
+            
+                                // If event present, trigger callback function
+                                if(eventName == deq.ev[i][0] || eventName == "*") {
+                                    callback(deq.ev[i][0],deq.ev[i][1]);
+                                }
+                            }
+                        }
+                    };
+                
+                    // Initialise event storage and function to add an event
+                    deq.ev = [];
+                    deq.addEvent = function(eventName,eventData) {
+                        if(typeof(eventName)=="string" && eventName!=="" && (typeof(eventData)=="undefined"||typeof(eventData)=="object")) {
+                            eventData = eventData || {};
+                            var deq = this;
+            
+                            // store a copy of the event in the event history
+                            var defensiveCopy = JSON.parse(JSON.stringify(eventData));
+                            deq.ev.push( [eventName,defensiveCopy] );
+            
+                            // Run through event listeners
+                            for (var i=0, len=deq.li.length; i<len; i++) {
+            
+                                // If event present, trigger callback function
+                                if(eventName == deq.li[i][0] || deq.li[i][0] == "*") {
+                                    deq.li[i][1](eventName,defensiveCopy);
+                                }
+                            }
+                        }
+                    };
+                    
+                    // Overwrite the default Array.push function
+                    deq.push = function(commandArr) {
+                        
+                        // Expected calls:
+                        // deq.push( ["event",eventName,eventData] )
+                        // deq.push( ["listener",eventName,callback] )
+                        
+                        // test input
+                        if( commandArr && Object.prototype.toString.call(commandArr) === '[object Array]') {
+            
+                            // call addEvent for event commands
+                            if(commandArr[0]=="event") {
+                                deq.addEvent(commandArr[1],commandArr[2]);
+                            }
+                            
+                            // call addListener for listener commands
+                            if (commandArr[0]=="listener") {
+                                deq.addListener(commandArr[1],commandArr[2]);
+                            }
+                        }
+                    };
+            
+                    // Process commands that were registered before the push function was overwritten
+                    while(deq.length>0) {
+                        deq.push(deq.shift());
+                    }
+                }
+            };
+
+            var create = function(queueName) {
+                if (typeof queueName == "undefined") {
+                    createDEQ(qmon.config.deq.queueName);
+                } else {
+                    createDEQ(queueName);
+                }
+            };
+
+            var sendToDimml = function(pixel) {
+                var pixelData = qmon.util.pixelToData(pixel);
+                pixelData && dimml.event('dataSubmit', {data: {}, ua: JSON.stringify(navigator.userAgent), }, 'flow');
+            };
+
+            return {
+                create: create,
+                send: sendToDimml
+            };
+        })();
+
+        var config = {
+            deq: {
+                enabled: true,
+                queueName: "qmondeq"
+            }
+        };
+
+        /**
+        * Public "window.qmon" api
+        */
+        return {
+            analytics: analytics,
+            collection: collection,
+            deq: deq,
+            logging: false,
+            log: util.log,
+            util: util,
+            version: "2.1.1",
+            config: config
+        };
+
+    })();
+    
+    /*---------------------------------------*/
+
+    if (window.dimml && typeof window.dimml._load === 'undefined' &&  window.dimml.load) {
+        var maxUrlLength = 32 * 1024;
+
+        window.dimml._load = window.dimml.load;
+        window.dimml.load = function () {
+            if (arguments[0] && arguments[0].length <= maxUrlLength) {
+                window.dimml._load.apply(this, arguments);
+            } else {
+                console.log("A GET request sent to dimml was too long and got discarded. (" +
+                Math.ceil(arguments[0].length / 1024) + "k > 32k)");
+            }
+        };
+    }
+
+    // If window.load was triggered, match immediately. Else, wait for the load event.
+    if (document.readyState === "complete") {
+        doMatch();
+    } else if (window.addEventListener) {
+        window.addEventListener("load", doMatch, false);
+    } else if (window.attachEvent) {
+        window.attachEvent("onload", doMatch);
+    }
+
+};preMatch(function(){if(dimml.match('*')){dimml.send({},'static',null,'09df860bc46f356f5ff1eae6437c830148f05fe8')}});})();

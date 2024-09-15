@@ -1,0 +1,17 @@
+(function(){
+  window['optimizely'] = window['optimizely'] || [];
+  window['optimizely'].push(['activateGeoDelayedExperiments', {
+    'location':{
+      'city': "AMSTERDAM",
+      'continent': "EU",
+      'country': "NL",
+      'region': "NH",
+      'dma': ""
+    },
+    'ip':"145.28.160.46"
+  }]);
+})
+
+()
+
+;

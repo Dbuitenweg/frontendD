@@ -15,11 +15,11 @@
 
 <body>
     <header>
-        <h1>KLM</h1>
+        <h1><abbr title="koninklijke luchtvaart maatschappij">KLM</abbr></h1>
         <button>zoeken</button>
         <nav>
             <ul>
-                <li><a href="home">Home</a></li>
+                <li><a href="home" aria-current="page">Home</a></li>
                 <li><a href="mijn reis">mijn reis</a></li>
                 <li><a href="check-in">check-in</a></li>
                 <li><a href="informatie">informatie</a></li>
@@ -30,47 +30,49 @@
     
     
     <main>
+        <section>
+            <h2 class="visually-hidden">lucht of vacantie boeken</h2>
+            <form>
+                <figure><img src="images/foto-1" alt=""></figure>
+                <nav>
+                    <ul>
+                        <li><a href="Een-vlucht-boeken">Een vlucht boeken</a></li>
+                        <li><a href="Boek-met-miles">Boek met miles</a></li>
+                        <li><a href="KLM-Holidays">KLM Holidays</a></li>
+                    </ul>
+                </nav>
+                
+                <label for="departure"> Vertrek:</label>
+                <input type="text" name="departure" placeholder="Vertreklocatie" required>
         
-        <form>
-            <figure><img src="images/foto-1" alt=""></figure>
-            <nav>
-                <ul>
-                    <li><a href="Een-vlucht-boeken">Een vlucht boeken</a></li>
-                    <li><a href="Boek-met-miles">Boek met miles</a></li>
-                    <li><a href="KLM-Holidays">KLM Holidays</a></li>
-                </ul>
-            </nav>
-            
-            <label for="departure"> Vertrek:</label>
-            <input type="text" name="departure" placeholder="Vertreklocatie" required>
-    
-            <label for="destination">Bestemming:</label>
-            <input type="text"  name="destination" placeholder="Bestemming" required>
-    
-            <label for="departure-date">Vertrekdatum:</label>
-            <input type="date" name="departure-date" required>
-    
-            <label for="return-date">Retourdatum:</label>
-            <input type="date"  name="return-date">
-    
-            <label for="passengers">Aantal passagiers:</label>
-            <input type="number" id="passengers" name="passengers" min="1" max="10" value="1"><br><br>
-    
-            <label for="cabin-class">Klasse:</label>
-            <select  name="cabin-class">
-                <option value="economy">Economy</option>
-                <option value="business">Business</option>
-                <option value="first">First Class</option>
-            </select>
-    
-            <button type="submit">Zoeken</button>
-        </form>
+                <label for="destination">Bestemming:</label>
+                <input type="text"  name="destination" placeholder="Bestemming" required>
+        
+                <label for="departure-date">Vertrekdatum:</label>
+                <input type="date" name="departure-date" required>
+        
+                <label for="return-date">Retourdatum:</label>
+                <input type="date"  name="return-date">
+        
+                <label for="passengers">Aantal passagiers:</label>
+                <input type="number" id="passengers" name="passengers" min="1" max="10" value="1"><br><br>
+        
+                <label for="cabin-class">Klasse:</label>
+                <select  name="cabin-class">
+                    <option value="economy">Economy</option>
+                    <option value="business">Business</option>
+                    <option value="first">First Class</option>
+                </select>
+        
+                <button type="submit">Zoeken</button>
+            </form>
+        </section>
 
         <img src="" alt="">
 
         <h2>Het zijn weer real deals dagen!</h2>
         <h3>Boek je vliegtickets of KLM Holidays-pakketreis nu met korting. Als je gaat, ga dan voor de Real Deal.</h3>
-        <button>bekijk alle real deals</button>
+        <button lang="nl">bekijk alle <span lang="en">real deals</span> </button>
 
         <h2>bestemmingen en deals</h2>
         <h3>vluchten</h3>
