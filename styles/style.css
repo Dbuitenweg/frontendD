@@ -19,6 +19,34 @@
 	--color-background:#eee;
 }
 
+h1{
+	display: none;
+}
+
+header{
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px;
+	z-index: 1000;
+	background-color: white;
+}
+
+header:first-child img{
+	width: 3em;
+	margin-left: 2em;
+	margin-bottom: 2em;
+	
+
+}
+
+header:first-child button{
+	float: right;
+}
+
+
 .visually-hidden {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
@@ -29,7 +57,135 @@
 	width: 1px;
   }
 
+  
+  
+  nav ul {
+	display: flex;
+	justify-content: start;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  nav ul li {
+	margin: 0 15px;
+	font-size:20px;
+	font-weight: 200;
+  }
+  
+  nav ul li a {
+	text-decoration: none;
+	color: #072b45;
 
+	
+  }
+
+  nav ul li a:active{
+	text-decoration: none;
+	background-color: lightgray; 
+	padding: 1em;
+	border-bottom:orangered solid thick ;
+	
+  }
+
+  nav ul li a:hover{
+	background-color: rgb(239, 239, 239);
+	padding: 1em;
+  }
+  
+  button {
+	padding: 10px 20px;
+	background-color: #007cfb;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+  }
+
+
+  section:first-child{
+	margin: 0;
+  }
+
+  section:first-child img{
+	width: 130%;
+	height: auto;
+	object-fit: cover;
+	vertical-align: middle;
+	margin-left: -2.5em;
+	left: 0;
+	margin-top: 7em;
+
+  }
+  
+  button:hover {
+	background-color: #005bb5;
+  }
+
+  
+  
+  section:nth-of-type(2) ul{
+	border-radius: 1em;
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 1em;
+	margin: 1em;
+  }
+
+  section:nth-of-type(2) input, select{
+	padding: 1em;
+	text-decoration: #000;
+	border-radius: 5px;
+	margin: 1em;
+  }
+
+  section:nth-of-type(3){
+	margin-left: 5em;
+	margin-top: 5em;
+  }
+
+  section:nth-of-type(3) h2{
+	font-size: 1.75em;
+	line-height: 1.5;
+	font-weight: 500;
+	letter-spacing: normal;
+  }
+
+
+  section:nth-of-type(3) ul{
+	border-bottom: solid rgb(239, 239, 239);
+	padding-bottom: 1em;
+  }
+
+
+
+  section:nth-of-type(4) h2:first-child{
+	margin-left: 5em;
+	margin-top: 10em;
+  }
+
+  section:nth-of-type(4) ul{
+	/* display: flex;
+	flex-wrap: wrap; */
+	display: grid;
+	grid-template-rows: auto;
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+	width: 35em;
+	padding-left: 0;
+	margin-left: 5em;
+	border-radius: 1em;
+
+  }
+
+  section:nth-of-type(4) ul img{
+	width: 100%;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+	
+  }
+
+  section:nth-of-type(4) ul h2,p{
+	padding-left: 2em;
+  } 
 
 
 
