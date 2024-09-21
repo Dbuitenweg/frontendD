@@ -1,239 +1,237 @@
 <!DOCTYPE html>
 <html lang="nl">
-	
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="author" content="jouw naam">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
 	<title>KLM</title>
-	
 	<link href="styles/style.css" rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 	<script defer src="scripts/script.js"></script>
 </head>
 
 <body>
-    <header>
-        <h1><abbr title="koninklijke luchtvaart maatschappij">KLM</abbr></h1>
-        <img src="images/klm-logo.png" alt="">
-        <button>zoeken</button>
-        <nav>
-            <ul>
-                <li><a href="home" aria-current="page">Home</a></li>
-                <li><a href="mijn reis">mijn reis</a></li>
-                <li><a href="check-in">check-in</a></li>
-                <li><a href="informatie">informatie</a></li>
-                <li><a href="hulp">hulp</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    
-    <main>
-        <section> 
-            <h2 class="visually-hidden">lucht of vacantie boeken</h2>
-            
-                <figure><img src="images/foto-1" alt=""></figure>
-                <nav>
-                    <ul>
-                        <li><a href="Een-vlucht-boeken">Een vlucht boeken</a></li>
-                        <li><a href="Boek-met-miles">Boek met miles</a></li>
-                        <li><a href="KLM-Holidays">KLM Holidays</a></li>
-                    </ul>
-                </nav>
+	<header>
+		<h1><abbr title="koninklijke luchtvaart maatschappij">KLM</abbr></h1> <img src="images/klm-logo.png" alt="">
+		<button>zoeken</button>
+		<nav>
+			<ul>
+				<li><a href="home" aria-current="page">Home</a></li>
+				<li><a href="mijn reis">mijn reis</a></li>
+				<li><a href="check-in">check-in</a></li>
+				<li><a href="informatie">informatie</a></li>
+				<li><a href="hulp">hulp</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<h2 class="visually-hidden">lucht of vacantie boeken</h2>
+			<figure><img src="images/foto-1" alt=""></figure>
+			<nav>
+				<ul>
+					<li><a href="Een-vlucht-boeken">Een vlucht boeken</a></li>
+					<li><a href="Boek-met-miles">Boek met miles</a></li>
+					<li><a href="KLM-Holidays">KLM Holidays</a></li>
+				</ul>
+			</nav>
+		</section>
+		<section>
+			<form>
+				<ul>
+					<input type="text" name="departure" placeholder="Vertreklocatie" required>
+					<input type="text" name="destination" placeholder="Bestemming" required>
+					<input type="date" name="departure-date" required>
+					<input type="date" name="return-date">
+					<input type="number" id="passengers" name="passengers" min="1" max="10" value="1">
+					<br>
+					<br>
+					<select name="cabin-class">
+						<option value="economy">Economy</option>
+						<option value="business">Business</option>
+						<option value="first">First Class</option>
+					</select>
+					<button type="submit">Zoeken</button>
+				</ul>
+			</form>
+		</section>
+		<section>
+			<h2>Het zijn weer real deals dagen!</h2>
+			<h3>Boek je vliegtickets of KLM Holidays-pakketreis nu met   korting. Als je gaat, ga dan voor de Real Deal.</h3> 
+            <a href="" lang="nl">bekijk alle 
+                <span lang="en">real deals</span>
+            </a> 
         </section>
+		<section>
+			<h2>Bestemmingen en Deals</h2>
+			<nav>
+				<ul>
+					<li><a href="vluchten">vluchten</a></li>
+					<li><a href="KLM Holidays">KLM Holidays</a></li>
+					<li><a href="Promo rewards">Promo rewards</a></li>
+				</ul>
+			</nav>
+		</section>
 
-        <section>
-            <form>
-                <ul>
-                
-                    <input type="text" name="departure" placeholder="Vertreklocatie" required>
-                    
-                    <input type="text"  name="destination" placeholder="Bestemming" required>
-                    
-                    <input type="date" name="departure-date" required>
-                    
-                    <input type="date"  name="return-date">
-                    
-                    <input type="number" id="passengers" name="passengers" min="1" max="10" value="1"><br><br>
-            
-                    <select  name="cabin-class">
-                        <option value="economy">Economy</option>
-                        <option value="business">Business</option>
-                        <option value="first">First Class</option>
-                    </select>
-                    <button type="submit">Zoeken</button>
-                </ul>
-                <h2>Het zijn weer real deals dagen!</h2>
-                <h3>Boek je vliegtickets of KLM Holidays-pakketreis nu met   korting. Als je gaat, ga dan voor de Real Deal.</h3>
-                <button lang="nl">bekijk alle <span lang="en">real deals</span> </button>
-                
-            </form>
-        </section>
+		<section>
+			<ul>
+				<li>
+					<a href="#">
+						<h2>new york</h2>
+						<p>(verenigde staten)</p> 
+                        <img src="images/foto-new-york.jpeg" alt="">
+						<p>vanaf EUR 498*</p>
+						<p>retour</p>
+						<p>promotarief</p>
+					</a>
+				</li>
+				<li>
+                    <a href="#">
+                        <h2>Portland,OR</h2>
+                        <p>"(Verenigde staten)"</p>
+                        <img src="images/foto-portland.jpeg" alt="">					
+                        <p>vanaf EUR 742*</p>
+                        <p>retour</p>
+                        <p>promotarief</p>
+                    </a>
+                </li>
+				<li> 
+                    <a href="">
+                        <h2>Portland,OR</h2>
+				        <p>"(Verenigde staten)"</p>
+                        <img src="images/foto-portland.jpeg" alt="">
+                        <p>vanaf EUR 742*</p>
+                        <p>retour</p>
+                        <p>promotarief</p>
+                    </a>
+                </li>
 
-        <section> 
-            <h2>Bestemmingen en Deals</h2>
-        
-            <nav>
-                <ul>
-                    <li><a href="vluchten">vluchten</a></li>
-                    <li><a href="KLM Holidays">KLM Holidays</a></li>
-                    <li><a href="Promo rewards">Promo rewards</a></li>
-                </ul>
-            </nav>
+                <li>
+                    <a href="">                      
+                        <h2>beijing</h2>
+                        <p>"(Cina)"</p>
+                        <img src="images/foto-beijing.jpeg" alt="">
+                        <p>vanaf EUR 619*</p>
+                        <p>retour</p>
+                        <p>promotarief</p>
+                    </a>
+                </li>
 
-            <ol>
-                <img src="images/foto-new-york.jpeg" alt="">
-                <li>new york</li>
-                <li>"(Verenigde staten)"</li>
-                <li>vanaf EUR 498*</li>
-                <button>retour</button>
-                <button>promotarief</button>
-            </ol>
+                <li>
+                    <a href="">
+                        <h2>curacao</h2>
+                        <p>"(curacao)"</p>
+                        <img src="images/foto-cura.jpeg" alt="">
+                        <p>vanaf EUR 709*</p>
+                        <button>retour</button>
+                        <button>promotarief</button>
 
-            <ol>
-                <img src="images/foto-portland.jpeg" alt="">
-                <li>Portland,OR</li>
-                <li>"(Verenigde staten)"</li>
-                <li>vanaf EUR 742*</li>
-                <button>retour</button>
-                <button>promotarief</button>
-            </ol>
+                    </a>
+                </li>
 
-            <ol>
-                <img src="images/foto-beijing.jpeg" alt="">
-                <li>beijing</li>
-                <li>"(Cina)"</li>
-                <li>vanaf EUR 619*</li>
-                <button>retour</button>
-                <button>promotarief</button>
-            </ol>
-
-            <ol>
-                <img src="images/foto-cura.jpeg" alt="">
-                <li>curacao</li>
-                <li>"(curacao)"</li>
-                <li>vanaf EUR 709*</li>
-                <button>retour</button>
-                <button>promotarief</button>
-            </ol>
-
-            <ol>
-                <img src="images/foto-dubai.jpeg" alt="">
-                <li>Dubai</li>
-                <li>"(Verenigde Arabische Emiraten)"</li>
-                <li>vanaf EUR 599*</li>
-                <button>retour</button>
-                <button>promotarief</button>
-            </ol>
-
-            <ol>
-                <img src="images/foto-rome.jpeg" alt="">
-                <li>rome</li>
-                <li>"(italie)"</li>
-                <li>vanaf EUR 159*</li>
-                <button>retour</button>
-                <button>promotarief</button>
-            </ol>
-
-            <button>bekijk alle aanbiedingen</button>
-        </section>
-        
-        
-
-        <section>
-            <h2>blijf op de hoogte</h2>
-            <ul>
+			</ul>
+		</section>
+		<section>
+			<ul> 
+				
+				
+			</ul>
+		</section>
+		<section>
+			<ul> 
+				
+				</ol>
+		</section>
+		<section>
+			<ol> 
+				<li>curacao</li>
+				<li>"(curacao)"</li>
+				<li>vanaf EUR 709*</li>
+				<button>retour</button>
+				<button>promotarief</button>
+			</ol>
+		</section>
+		<section>
+			<ol> <img src="images/foto-dubai.jpeg" alt="">
+				<li>Dubai</li>
+				<li>"(Verenigde Arabische Emiraten)"</li>
+				<li>vanaf EUR 599*</li>
+				<button>retour</button>
+				<button>promotarief</button>
+			</ol>
+		</section>
+		<section>
+			<ol> <img src="images/foto-rome.jpeg" alt="">
+				<li>rome</li>
+				<li>"(italie)"</li>
+				<li>vanaf EUR 159*</li>
+				<button>retour</button>
+				<button>promotarief</button>
+			</ol>
+		</section>
+		<button>bekijk alle aanbiedingen</button>
+		<section>
+			<h2>blijf op de hoogte</h2>
+			<ul>
                 <img src="images/mooie-deals" alt="">
                 <h2>mooie deals voor klm holidayspakketreizen</h2>
                 <p>pakketreizen - met vlucht, hotel en eventueel vervoer - zijn tijdens de real deal dagen extra gunstig geprijsd!</p>
-            </ul>
-        
+			</ul>
+			<ul> <img src="images/korting-op" alt="">
+				<h2>korting op premium comfort classticket</h2>
+				<p>boek tijdens de real deal dagen voordelig je premium comfort class- tickets naar meer dan 10 bestemmingen</p>
+			</ul>
+			<ul> <img src="images/world-business" alt="">
+				<h2>world business class nu met korting</h2>
+				<p>profiteer tijdens de real deal dagen van voordeel op world business class-tickets naar meer dan 25 bestemmingen</p>
+			</ul>
+			<ul> <img src="images/world-deelnemer" alt="">
+				<h2>world deelnemer van flying blue</h2>
+				<p>reis met de vele voordelen van ons loyaliteitsprogramma flying blue</p>
+			</ul>
+		</section>
+		<section>
+			<h2>op zoek naar meer dan eenvlucht?</h2>
+			<ul> <img src="images/auto-sleutle.svg" alt="">
+				<h2>huur een auto</h2>
+				<p>boek voordelig uw auto bij hertz en spaar miles.</p>
+			</ul>
+			<ul> <img src="images/bed.svg" alt="">
+				<h2>vind uw verblijf</h2>
+				<p>boek uw accomodatie bij booking.com en ontvang miles.</p>
+			</ul>
+			<ul> <img src="images/auto-parkeren.svg" alt="">
+				<h2>vervoer en parkeren</h2>
+				<p>breis van en naar de luchthaven en verken uw bestemming op uw manier.</p>
+			</ul>
+			<ul></ul> <img src="images/luchtballon.svg" alt="">
+			<h2>onvergetelijke reiservaringen</h2>
+			<p>boek uw excursie vooraf met GetYourGuide en verdien miles</p>
+			</ul>
+			<button>ontdek meer</button>
+		</section>
+		<h2>laat u inspireren</h2>
+		<h3>doe ideeen op een plan uw volgende reis.</h3>
+		<ul> <img src="images/foto-rome.jpeg" alt="">
+			<h2>italy</h2>
+			<h3>rome</h3> </ul>
+		<ul> <img src="images/foto-cura.jpeg" alt="">
+			<h2>curacao</h2>
+			<h3>curacao</h3> </ul>
+		<ul> <img src="" alt="">
+			<h2>italy</h2>
+			<h3>florence</h3> </ul>
+		<ul>
+			<h2>op zoek naar speciale aanbiedingen?</h2>
+			<h3>meld u hier aan om gepersonaliseerde aanbiedingen en reisinspiratie rechtstreeks in uw mailbox te ontvangen</h3>
+			<button>aanmelden</button>
+		</ul>
+	</main>
+	<footer>
 
-        
-            <ul>
-                <img src="images/korting-op" alt="">
-                <h2>korting op premium comfort classticket</h2>
-                <p>boek tijdens de real deal dagen voordelig je premium comfort class- tickets naar meer dan 10 bestemmingen</p>
-            </ul>
-
-            <ul>
-                <img src="images/world-business" alt="">
-                <h2>world business class nu met korting</h2>
-                <p>profiteer tijdens de real deal dagen van voordeel op world business class-tickets naar meer dan 25 bestemmingen</p>
-            </ul>
-
-            <ul>
-                <img src="images/world-deelnemer" alt="">
-                <h2>world deelnemer van flying blue</h2>
-                <p>reis met de vele voordelen van ons loyaliteitsprogramma flying blue</p>
-            </ul>
-
-        </section>
-        <h2>op zoek naar meer dan eenvlucht?</h2>
-
-        <ul>
-            <img src="images/auto-sleutle.svg" alt="">
-            <h2>huur een auto</h2>
-            <p>boek voordelig uw auto bij hertz en spaar miles.</p>
-        </ul>
-
-        <ul>
-            <img src="images/bed.svg" alt="">
-            <h2>vind uw verblijf</h2>
-            <p>boek uw accomodatie bij booking.com en ontvang miles.</p>
-        </ul>
-
-        <ul>
-            <img src="images/auto-parkeren.svg" alt="">
-            <h2>vervoer en parkeren</h2>
-            <p>breis van en naar de luchthaven en verken uw bestemming op uw manier.</p>
-        </ul>
-
-        <ul></ul>
-            <img src="images/luchtballon.svg" alt="">
-            <h2>onvergetelijke reiservaringen</h2>
-            <p>boek uw excursie vooraf met GetYourGuide en verdien miles</p>
-        </ul>
-
-        <button>ontdek meer</button>
-
-
-        <h2>laat u inspireren</h2>
-        <h3>doe ideeen op een plan uw volgende reis.</h3>
-
-        <ul>
-            <img src="images/foto-rome.jpeg" alt="">
-            <h2>italy</h2>
-            <h3>rome</h3>
-        </ul>
-
-        <ul>
-            <img src="images/foto-cura.jpeg" alt="">
-            <h2>curacao</h2>
-            <h3>curacao</h3>
-        </ul>
-
-        <ul>
-            <img src="" alt="">
-            <h2>italy</h2>
-            <h3>florence</h3>
-        </ul>
-
-
-        <ul>
-            <h2>op zoek naar speciale aanbiedingen?</h2>
-            <h3>meld u hier aan om gepersonaliseerde aanbiedingen en reisinspiratie rechtstreeks in uw mailbox te ontvangen</h3>
-            <button>aanmelden</button>
-        </ul>
-
-    </main>
-
-    <footer>
 
     </footer>
-    
 </body>
-	
+
 </html>
