@@ -1,0 +1,112 @@
+@font-face{
+  font-family: "UniversalSans-Display-Medium";
+  src: url("../fonts/UniversalSans-Display-Medium.woff2") format("woff2");
+}
+
+@font-face{
+  font-family: "UniversalSans-Text-Bold";
+  src: url("../fonts/UniversalSans-Text-Bold.woff2") format("woff2");
+}
+
+@font-face{
+  font-family: "UniversalSans-Text-Regular";
+  src: url("../fonts/UniversalSans-Text-Regular.woff2") format("woff2");
+}
+
+@font-face{
+  font-family: "4dd16d135e04e25845139034ca1b9bbe";
+  src: url("../fonts/4dd16d135e04e25845139034ca1b9bbe.woff") format("woff");
+}
+
+@font-face{
+  font-family: "ba3df36a1b2d25b539991dcd45a122f8";
+  src: url("../fonts/ba3df36a1b2d25b539991dcd45a122f8.woff") format("woff");
+}
+
+@font-face{
+  font-family: "pxiEyp8kv8JHgFVrJJfecg";
+  src: url("../fonts/pxiEyp8kv8JHgFVrJJfecg.woff2") format("woff2");
+}
+
+
+h1 {
+    display: none;
+  }
+  
+  header {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
+    background-color: white;
+  }
+  
+  header:first-child img {
+    width: 3em;
+    margin-left: 2em;
+    margin-bottom: 2em;
+  }
+  
+  header:first-child button {
+    float: right;
+  }
+  
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+    font-size: 20px;
+    font-weight: 200;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #072b45;
+  }
+  
+  nav ul li a:active {
+    text-decoration: none;
+    background-color: lightgray;
+    padding: 1em;
+    border-bottom: orangered solid thick;
+  }
+  
+  nav ul li a:hover {
+    background-color: rgb(239, 239, 239);
+    padding: 1em;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color:#c2dbea ;
+      color: #0e578c;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px 1.5px  rgba(0, 0, 0, 0.3);
+  }
+  
+    body{
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 400;
+  }
