@@ -31,14 +31,60 @@ section:first-child img {
   vertical-align: middle;
   margin-left: -1em;
   left: 0;
-  margin-top: 7em;
+  margin-top: 7.5em;
+  position: relative;
 }
+
+section:first-child section:nth-of-type(1){
+  border-radius:1em;
+  background-color: #072b45;
+  padding:1em;
+  width: 40%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 57%;
+  margin-top: -25%;
+  padding-right: 5em;
+  opacity: 90%;
+}
+
+
+section:first-child section:nth-of-type(1) h2{
+  color: white;
+}
+
+section:first-child section:nth-of-type(1) p{
+  color: white;
+}
+
+section:first-child section:nth-of-type(1) a{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: end;
+  margin-right: 2em;
+}
+
+section:first-child section:nth-of-type(1) a:hover{
+  color: white;
+  transition: 1s;
+  border-bottom:solid #ffffff;
+}
+
+section:first-child nav li > a:first-child{
+  color: #0e578c;
+}
+
 
 button:hover {
 background-color:#cbdde9;
 box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
 transition: 0.3s;
 }
+
+
+
 
 /* formulier2 */
 
@@ -59,65 +105,68 @@ select {
 
 /* Het zijn weer real deals dagen!3 */
 
+
+
+
 /* Bestemmingen en Deals4 */
 
-section:nth-of-type(4) {
+section:nth-of-type(3) {
   margin-left: 5em;
   margin-top: 5em;
 }
 
-section:nth-of-type(4) h2 {
+section:nth-of-type(3) h2 {
   font-size: 1.75em;
   line-height: 1.5;
   font-weight: 500;
   letter-spacing: normal;
 }
 
-section:nth-of-type(4) ul {
+section:nth-of-type(3) ul {
   border-bottom: solid rgb(239, 239, 239);
   padding-bottom: 1em;
 }
 
 /* new york-5 */
-section:nth-of-type(5) ul {
+section:nth-of-type(4) ul {
 	list-style-type: none;
 	padding: 0;
 	margin-left: 1em;
 	border-bottom: solid thin lightgray;
 }
-section:nth-of-type(5) li a img{
+section:nth-of-type(4) li a img{
 	order: -1;
 	margin: 5px;
 }
 
-section:nth-of-type(5) li a section{
+section:nth-of-type(4) li a section{
   display: flex;
   flex-direction: column;
-  
+
 }
 
-section:nth-of-type(5) li a h2{
+section:nth-of-type(4) li a h2{
 	font-size: medium;
 }
 
-section:nth-of-type(5) li a p:first-of-type,h2{
+section:nth-of-type(4) li a p:first-of-type,h2{
 	margin: 0;
   margin-left: 0;
 }
 
-section:nth-of-type(5) li a > p:nth-of-type(1){
+section:nth-of-type(4) li a > p:nth-of-type(1){
   margin-left: 3em;
 }
 
-section:nth-of-type(5) li a > p:nth-of-type(2){
+section:nth-of-type(4) li a > p:nth-of-type(2){
   margin-left: 3em;
 }
 
-section:nth-of-type(5) li a > p:nth-of-type(3){
+section:nth-of-type(4) li a > p:nth-of-type(3){
   display: flex;
 }
 
-section:nth-of-type(5) li a{
+section:nth-of-type(4) li a{
   text-decoration: none;
   color: black;
   display: flex;
@@ -125,7 +174,7 @@ section:nth-of-type(5) li a{
   border-bottom: solid thin lightgray;
 }
 
-section:nth-of-type(5) button:nth-of-type(1){
+section:nth-of-type(4) button:nth-of-type(1){
 	margin-left: 1em;
 }
 
@@ -133,13 +182,13 @@ section:nth-of-type(5) button:nth-of-type(1){
 
 /* blijf op de hoogte-6 */
 
-section:nth-of-type(6)  h2:first-child {
+section:nth-of-type(5)  h2:first-child {
   margin-left: 1em;
   margin-top: 3em;
   margin-bottom: 3em;
 }
 
-section:nth-of-type(6) ul{
+section:nth-of-type(5) ul{
   display: flex;
   overflow-x: auto;
   gap: 2em;
@@ -147,11 +196,11 @@ section:nth-of-type(6) ul{
   padding: 0;
 }
 
-section:nth-of-type(6) ul::-webkit-scrollbar {
+section:nth-of-type(5) ul::-webkit-scrollbar {
   display: none;
 }
 
-section:nth-of-type(6) li {
+section:nth-of-type(5) li {
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
   width: 30em;
   min-width: 30em;
@@ -165,13 +214,13 @@ section:nth-of-type(6) li {
  scroll-snap-align: center;
 }
 
-section:nth-of-type(6) a{
+section:nth-of-type(5) a{
   text-decoration: none;
   color: #000;
   display: flex;
   flex-direction: column;
 }
-section:nth-of-type(6) a:hover{
+section:nth-of-type(5) a:hover{
   text-decoration: none;
   color: #000;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
@@ -179,20 +228,20 @@ transition: 0.3s;
 border-radius: 1em;
 }
 
-section:nth-of-type(6) img {
+section:nth-of-type(5) img {
   width: 100%;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
   order: -1;
 }
 
-section:nth-of-type(6) ul > h2:nth-of-type(1){
+section:nth-of-type(5) ul > h2:nth-of-type(1){
   padding-left: 2em;
 }
 
 
 
-section:nth-of-type(6) p {
+section:nth-of-type(5) p {
   padding-bottom: 1em;
   padding: 2em;
 }
@@ -203,12 +252,12 @@ section:nth-of-type(6) p {
 
 /* op zoek naar meer dan eenvlucht?-12 */
 
-section:nth-of-type(7) h2 {
+section:nth-of-type(6) h2 {
 margin-left: 1em;
 margin-top: 3em;
 }
 
-section:nth-of-type(7) li{
+section:nth-of-type(6) li{
   list-style-type: none; 
   justify-content: start;
   width: 15em;
@@ -220,7 +269,7 @@ section:nth-of-type(7) li{
   display: flex;
 }
 
-section:nth-of-type(7) a{
+section:nth-of-type(6) a{
   text-decoration: none;
   color: #000;
   display: flex;
@@ -228,23 +277,23 @@ section:nth-of-type(7) a{
 }
 
 
-section:nth-of-type(7) ul img {
+section:nth-of-type(6) ul img {
   width: 100%;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
   order: -1;
 }
 
-section:nth-of-type(7) ul h2 {
+section:nth-of-type(6) ul h2 {
   margin-left: 1em;
   margin-top: 0;
 }
 
 
-section:nth-of-type(7) p {
+section:nth-of-type(6) p {
   padding-bottom: 1em;
 }
-section:nth-of-type(7) button:nth-of-type(1){
+section:nth-of-type(6) button:nth-of-type(1){
 	margin-left: 1em;
 	margin-bottom: 3em;
 	margin-top: 0;
@@ -252,21 +301,21 @@ section:nth-of-type(7) button:nth-of-type(1){
 
 /* Laat u inspireren-8 */
 
-section:nth-of-type(8){
+section:nth-of-type(7){
 	margin-left: 1em;
 }
 
-section:nth-of-type(8)h3{
+section:nth-of-type(7)h3{
 	color: #000;
 }
 
 
 /* jouw code */
-section:nth-of-type(9) ul{
+section:nth-of-type(8) ul{
 	margin-left: 0;
 }
 
-section:nth-of-type(9) li{
+section:nth-of-type(8) li{
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -277,29 +326,29 @@ section:nth-of-type(9) li{
 	text-shadow: 0 8px 8px rgba(0, 0, 0, .08);
 }
 
-section:nth-of-type(9) li section{
+section:nth-of-type(8) li section{
   position: absolute;
   margin-left:8em ;
 }
 
-section:nth-of-type(9) ul li img{
+section:nth-of-type(8) ul li img{
 	width:20em ;
 	border-radius: 0.5em;
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 
 }
 
-section:nth-of-type(9) h2:first-child{
+section:nth-of-type(8) h2:first-child{
 	
 }
 
-section:nth-of-type(9) li h2:first-child,section:nth-of-type(9) li h3:nth-of-type(1){
+section:nth-of-type(8) li h2:first-child,section:nth-of-type(8) li h3:nth-of-type(1){
   margin: 0;
 	
 
 }
 
-section:nth-of-type(9) li button:nth-of-type(1){
+section:nth-of-type(8) li button:nth-of-type(1){
 	background-color:#c2dbea ;
 	color: #0e578c;
 	margin-left: -3.5em;
@@ -309,7 +358,7 @@ section:nth-of-type(9) li button:nth-of-type(1){
 
 /* op zoek naar speciale aanbiedingen? */
 
-section:nth-of-type(10) ul{
+section:nth-of-type(9) ul{
 	display: flex;
     justify-content: space-between;
     align-items: center;
@@ -324,20 +373,20 @@ section:nth-of-type(10) ul{
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 6px 1px rgba(0, 0, 0, 0.2);
 }
 
-section:nth-of-type(10) li h2:first-child{
+section:nth-of-type(9) li h2:first-child{
 	margin-bottom: 0.5em;
 }
 
 
 
-section:nth-of-type(10) li h2:first-child,section:nth-of-type(10) li h3:nth-of-type(1){
+section:nth-of-type(9) li h2:first-child,section:nth-of-type(9) li h3:nth-of-type(1){
 	color: #072b45;
 	font-size: 1rem;
 	line-height: 1.5;
 	font-weight: 400;
 }
 
-section:nth-of-type(10) li button:first-child{
+section:nth-of-type(9) li button:first-child{
 	padding: 1em 2em;
 	margin-right: 1.5em;
     background-color: #ffffff;
@@ -349,6 +398,6 @@ section:nth-of-type(10) li button:first-child{
 	margin-left: 2em;
 }
 
-section:nth-of-type(10) li button:first-child:hover{
+section:nth-of-type(9) li button:first-child:hover{
 	background-color:#d6e2ec;
 }
