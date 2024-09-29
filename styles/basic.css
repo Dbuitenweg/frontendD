@@ -28,10 +28,6 @@
   src: url("../fonts/pxiEyp8kv8JHgFVrJJfecg.woff2") format("woff2");
 }
 
-
-h1 {
-    display: none;
-  }
   
   header {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
