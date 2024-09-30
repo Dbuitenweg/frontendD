@@ -39,13 +39,13 @@ section:first-child section:nth-of-type(1){
   border-radius:1em;
   background-color: #072b45;
   padding:1em;
-  width: 40%;
+  width: 500px;
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 57%;
+  margin-left: 37%;
   margin-top: -25%;
-  padding-right: 5em;
+  padding-right:2em;
   opacity: 90%;
 }
 
@@ -73,7 +73,7 @@ section:first-child section:nth-of-type(1) a:hover{
 }
 
 section:first-child nav li > a:first-child{
-  color: #0e578c;
+  
 }
 
 
@@ -128,12 +128,40 @@ section:nth-of-type(3) ul {
   padding-bottom: 1em;
 }
 
+
+/* test */
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+
+
+
+td a {
+  text-decoration: none;
+  color: inherit;
+}
+
+tr a:hover{
+  background-color: lightgray;
+}
+
 /* new york-5 */
 section:nth-of-type(4) ul {
 	list-style-type: none;
 	padding: 0;
 	margin-left: 1em;
 	border-bottom: solid thin lightgray;
+  display: flex;
+  flex-direction: column;
+
+
 }
 section:nth-of-type(4) li a img{
 	order: -1;
