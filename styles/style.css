@@ -26,6 +26,7 @@ section:first-child {
 
 section:first-child img {
   width: 110%;
+  max-width: 80em;
   height: auto;
   object-fit: cover;
   vertical-align: middle;
@@ -129,100 +130,90 @@ section:nth-of-type(3) ul {
 }
 
 
-/* test */
+
+/* new york-5 */
+
+section:nth-of-type(3){
+  display: grid;
+  justify-content: center;
+  justify-items: start;
+  width:80%;
+  max-width:60em ;
+}
+
+section:nth-of-type(3) h2{
+  
+}
+
+
+section:nth-of-type(3) table {
+
+}
 
 table {
   border-collapse: collapse;
 }
 
+tr{
+border-bottom: solid 1px lightgray; 
+}
+span{
+  display: flex;
+}
+
+section:nth-of-type(3) img{
+  order: -1;
+} 
 td {
   padding: 10px;
   text-align: left;
+ 
 }
 
 
+tr:hover{
+  background-color: rgb(225, 225, 225);
+}
 
-
-td a {
+table a {
   text-decoration: none;
   color: inherit;
 }
 
-tr a:hover{
+table a:hover{
   background-color: lightgray;
-}
-
-/* new york-5 */
-section:nth-of-type(4) ul {
-	list-style-type: none;
-	padding: 0;
-	margin-left: 1em;
-	border-bottom: solid thin lightgray;
-  display: flex;
-  flex-direction: column;
-
-
-}
-section:nth-of-type(4) li a img{
-	order: -1;
-	margin: 5px;
-}
-
-section:nth-of-type(4) li a section{
-  display: flex;
-  flex-direction: column;
-
-}
-
-section:nth-of-type(4) li a h2{
-	font-size: medium;
-}
-
-section:nth-of-type(4) li a p:first-of-type,h2{
-	margin: 0;
-  margin-left: 0;
-}
-
-section:nth-of-type(4) li a > p:nth-of-type(1){
-  margin-left: 3em;
-}
-
-section:nth-of-type(4) li a > p:nth-of-type(2){
-  margin-left: 3em;
-}
-
-section:nth-of-type(4) li a > p:nth-of-type(3){
-  display: flex;
-}
-
-section:nth-of-type(4) li a{
-  text-decoration: none;
-  color: black;
-  display: flex;
-  align-items: center;
-  border-bottom: solid thin lightgray;
-}
-
-section:nth-of-type(4) button:nth-of-type(1){
-	margin-left: 1em;
 }
 
 
 
 /* blijf op de hoogte-6 */
 
-section:nth-of-type(5)  h2:first-child {
+section:nth-of-type(5){
+  display: grid;
+  justify-content: center;
+  
+}
+
+section:nth-of-type(5)  > h2:first-child {
   margin-left: 1em;
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+}
+
+section:nth-of-type(5) a > h2:first-child{
+  padding-left: 1em;
+  
 }
 
 section:nth-of-type(5) ul{
-  display: flex;
+  /* display: flex;
   overflow-x: auto;
   gap: 2em;
   scroll-snap-type: x mandatory;
-  padding: 0;
+  padding: 0; */
+  display: grid;
+  grid-template-columns: 500px 500px;
 }
 
 section:nth-of-type(5) ul::-webkit-scrollbar {
@@ -232,15 +223,16 @@ section:nth-of-type(5) ul::-webkit-scrollbar {
 section:nth-of-type(5) li {
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
   width: 30em;
-  min-width: 30em;
+  min-width: 25em;
   padding-left: 0;
   margin-left: 1em;
   border-radius: 1em;
-  margin-bottom: 4em;
+  margin-bottom: 1em;
  list-style-type: none; 
  display: flex;
  flex-shrink: 1;
  scroll-snap-align: center;
+ 
 }
 
 section:nth-of-type(5) a{
@@ -264,15 +256,8 @@ section:nth-of-type(5) img {
   order: -1;
 }
 
-section:nth-of-type(5) ul > h2:nth-of-type(1){
-  padding-left: 2em;
-}
-
-
-
 section:nth-of-type(5) p {
-  padding-bottom: 1em;
-  padding: 2em;
+  padding: 0em 1em 0em 1em;
 }
 
 /****************/
@@ -280,16 +265,35 @@ section:nth-of-type(5) p {
 /****************/
 
 /* op zoek naar meer dan eenvlucht?-12 */
+section:nth-of-type(6){
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  position: relative;
+  height: 42vh;
 
-section:nth-of-type(6) h2 {
+}
+
+
+
+section:nth-of-type(6) > h2:first-child {
 margin-left: 1em;
 margin-top: 3em;
+display: flex;
+justify-content: center;
+margin-right: 20em;
+}
+
+section:nth-of-type(6) ul{
+  display:flex;
+  justify-content: center;
+
 }
 
 section:nth-of-type(6) li{
   list-style-type: none; 
   justify-content: start;
-  width: 15em;
+  width: 13em;
   padding-left: 0;
   margin-left: 1em;
   border-radius: 1em;
@@ -307,10 +311,9 @@ section:nth-of-type(6) a{
 
 
 section:nth-of-type(6) ul img {
-  width: 100%;
-  border-top-left-radius: 1em;
-  border-top-right-radius: 1em;
-  order: -1;
+  width: 70%;
+border-radius: 1em;
+order: -1;
 }
 
 section:nth-of-type(6) ul h2 {
@@ -321,12 +324,18 @@ section:nth-of-type(6) ul h2 {
 
 section:nth-of-type(6) p {
   padding-bottom: 1em;
+  padding-left: 1em;
 }
-section:nth-of-type(6) button:nth-of-type(1){
-	margin-left: 1em;
-	margin-bottom: 3em;
-	margin-top: 0;
+section:nth-of-type(6) button{
+  margin-top:0; 
+  display: block;
+  position: absolute;
+  bottom: 2em; 
+  margin-right: 42em; 
+  transform: translateX(-50%);
+  padding: 1em 2em;
 }
+
 
 /* Laat u inspireren-8 */
 
