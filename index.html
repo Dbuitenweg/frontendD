@@ -52,24 +52,22 @@
 		
 
 		<section>
-			<form>
-				<ul>
-					<input type="text" name="departure" placeholder="Vertreklocatie" required>
-					<input type="text" name="destination" placeholder="Bestemming" required>
-					<input type="date" name="departure-date" required>
-					<input type="date" name="return-date">
-					<input type="number" id="passengers" name="passengers" min="1" max="10" value="1">
-					<br>
-					<br>
-					<select name="cabin-class">
-						<option value="economy">Economy</option>
-						<option value="business">Business</option>
-						<option value="first">First Class</option>
-					</select>
-					<button type="submit">Zoeken</button>
-				</ul>
-			</form>
-		</section>
+            <form>
+                <select name="cabin-class">
+                    <option value="economy">Economy</option>
+                    <option value="business">Business</option>
+                    <option value="first">First Class</option>
+                </select>
+                <input type="text" name="departure" placeholder="Vertreklocatie" required>
+                <input type="text" name="destination" placeholder="Bestemming" required>
+                <input type="date" name="departure-date" required>
+                <input type="date" name="return-date">
+                <input type="number" id="passengers" name="passengers" min="1" max="10" value="1">
+                
+                <button type="submit">Zoeken</button>
+            </form>
+        </section>
+        
 
         <section>
             

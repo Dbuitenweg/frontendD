@@ -22,11 +22,18 @@
 
 section:first-child {
   margin: 0;
+
+}
+
+section:first-child > nav ul{
+  display: flex;
+    justify-content: center;
+    margin-right: 45em;
+
 }
 
 section:first-child img {
   width: 110%;
-  max-width: 80em;
   height: auto;
   object-fit: cover;
   vertical-align: middle;
@@ -42,10 +49,8 @@ section:first-child section:nth-of-type(1){
   padding:1em;
   width: 500px;
   position: absolute;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 37%;
-  margin-top: -25%;
+  margin-left: 50%;
+  margin-top: -19em;
   padding-right:2em;
   opacity: 90%;
 }
@@ -88,20 +93,59 @@ transition: 0.3s;
 
 
 /* formulier2 */
+section:nth-of-type(2){
+  display: flex;
+  justify-content: center;
 
-section:nth-of-type(2) ul {
-  border-radius: 1em;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
-  padding: 1em;
-  margin: 1em;
 }
 
-section:nth-of-type(2) input,
-select {
+
+section:nth-of-type(2) form {
+  border-radius: 1em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 6px 1px rgba(0, 0, 0, 0.2);
+  padding: 1em;
+  margin: 1em;
+  width: 75em;
+}
+
+section:nth-of-type(2) input
+ {
   padding: 1em;
   text-decoration: #000;
   border-radius: 5px;
   margin: 1em;
+  font-size: 1rem;
+    line-height: 1.5;
+    font-family: "UniversalSansTextRegular";
+    font-weight: 400;
+}
+section:nth-of-type(2) input[name="departure"],
+section:nth-of-type(2) input[name="destination"]{
+  width: 38%;
+}
+
+section:nth-of-type(2) input[name="departure-date" ],
+section:nth-of-type(2) input[name="return-date"]{
+  width: 35%;
+  
+}
+
+section:nth-of-type(2) select{
+  padding: 1em;
+  padding-right: 4em;
+  text-decoration: #000;
+  border-radius: 5px;
+  margin: 1em;
+  font-size: 1rem;
+    line-height: 1.5;
+    font-family: "UniversalSansTextRegular";
+    font-weight: 400;
+}
+
+section:nth-of-type(2) form button{
+  display: flex;
+  float: right;
+  margin-top: 5em;
 }
 
 
@@ -112,16 +156,14 @@ select {
 
 /* Bestemmingen en Deals4 */
 
-section:nth-of-type(3) {
-  margin-left: 5em;
-  margin-top: 5em;
-}
+
 
 section:nth-of-type(3) h2 {
   font-size: 1.75em;
   line-height: 1.5;
   font-weight: 500;
   letter-spacing: normal;
+  font-family: "UniversalSansDisplayMedium";
 }
 
 section:nth-of-type(3) ul {
@@ -137,8 +179,7 @@ section:nth-of-type(3){
   display: grid;
   justify-content: center;
   justify-items: start;
-  width:80%;
-  max-width:60em ;
+  margin-right: -5em;
 }
 
 section:nth-of-type(3) h2{
@@ -152,6 +193,7 @@ section:nth-of-type(3) table {
 
 table {
   border-collapse: collapse;
+  width: 1000px;
 }
 
 tr{
@@ -159,6 +201,7 @@ border-bottom: solid 1px lightgray;
 }
 span{
   display: flex;
+  margin-left: -5em;
 }
 
 section:nth-of-type(3) img{
@@ -184,6 +227,10 @@ table a:hover{
   background-color: lightgray;
 }
 
+section:nth-of-type(3) button{
+  margin-top: 1em;
+}
+
 
 
 /* blijf op de hoogte-6 */
@@ -195,15 +242,23 @@ section:nth-of-type(5){
 }
 
 section:nth-of-type(5)  > h2:first-child {
-  margin-left: 1em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-
+  margin-left: 2em;
+  margin-top: 3em;
+  margin-bottom: 0em;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-family: "UniversalSansDisplayMedium";
+  font-weight: 500;
+  letter-spacing: normal;
 }
 
 section:nth-of-type(5) a > h2:first-child{
   padding-left: 1em;
-  
+  font-size: 1.125rem;
+  line-height: 1.4444444444;
+  font-family: "UniversalSansDisplayMedium";
+font-weight: 500;
+letter-spacing: normal;   
 }
 
 section:nth-of-type(5) ul{
@@ -251,13 +306,18 @@ border-radius: 1em;
 
 section:nth-of-type(5) img {
   width: 100%;
-  border-top-left-radius: 1em;
-  border-top-right-radius: 1em;
+  border-radius: 1em;
   order: -1;
 }
 
 section:nth-of-type(5) p {
+  margin-top: -1em;
   padding: 0em 1em 0em 1em;
+  font-size: .875rem;
+    line-height: 1.5714285714;
+    font-family: "UniversalSansTextRegular";
+    font-weight: 400;
+    letter-spacing: normal;
 }
 
 /****************/
@@ -277,7 +337,7 @@ section:nth-of-type(6){
 
 
 section:nth-of-type(6) > h2:first-child {
-margin-left: 1em;
+margin-left: -3em;
 margin-top: 3em;
 display: flex;
 justify-content: center;
@@ -287,7 +347,7 @@ margin-right: 20em;
 section:nth-of-type(6) ul{
   display:flex;
   justify-content: center;
-
+  gap: 2em;
 }
 
 section:nth-of-type(6) li{
@@ -330,8 +390,8 @@ section:nth-of-type(6) button{
   margin-top:0; 
   display: block;
   position: absolute;
-  bottom: 2em; 
-  margin-right: 42em; 
+  bottom: -8.5em; 
+  margin-right: 27em; 
   transform: translateX(-50%);
   padding: 1em 2em;
 }
@@ -339,18 +399,38 @@ section:nth-of-type(6) button{
 
 /* Laat u inspireren-8 */
 
-section:nth-of-type(7){
-	margin-left: 1em;
-}
+section:nth-of-type(7) > h2:first-child{
+  
+  margin-top: 9em;
+  display: flex;
+  justify-content: center;
+  margin-right: 30em;
+  }
 
-section:nth-of-type(7)h3{
-	color: #000;
-}
+  section:nth-of-type(7) > h3:nth-of-type(1){
+  
+  margin-top: -1em;
+  display: flex;
+  justify-content: center;
+  margin-right: 30em;
+  }
+
 
 
 /* jouw code */
+section:nth-of-type(8){
+	display: flex;
+  flex-direction: column;
+  align-items: center; 
+  position: relative;
+  height: 42vh;
+ 
+}
+
 section:nth-of-type(8) ul{
-	margin-left: 0;
+  display: grid;
+  grid-template-columns: 510px 320px;
+  margin-right: 10em;
 }
 
 section:nth-of-type(8) li{
@@ -366,37 +446,37 @@ section:nth-of-type(8) li{
 
 section:nth-of-type(8) li section{
   position: absolute;
-  margin-left:8em ;
+  margin-left:14em ;
 }
 
 section:nth-of-type(8) ul li img{
-	width:20em ;
+	width:30em ;
 	border-radius: 0.5em;
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  margin-right: 2em;
 
 }
 
-section:nth-of-type(8) h2:first-child{
-	
-}
-
-section:nth-of-type(8) li h2:first-child,section:nth-of-type(8) li h3:nth-of-type(1){
-  margin: 0;
-	
-
-}
-
-section:nth-of-type(8) li button:nth-of-type(1){
-	background-color:#c2dbea ;
-	color: #0e578c;
-	margin-left: -3.5em;
-	max-width: fit-content;
+section:nth-of-type(8) button{
+  margin-top:0; 
+  display: block;
+  position: absolute;
+  bottom: -35em; 
+  margin-right: 14em; 
+  transform: translateX(-50%);
+  padding: 1em 2em;
 }
 
 
 /* op zoek naar speciale aanbiedingen? */
 
+section:nth-of-type(9){
+  display: flex;
+  justify-content: center;
+}
+
 section:nth-of-type(9) ul{
+  max-width: 1000px;
 	display: flex;
     justify-content: space-between;
     align-items: center;
@@ -404,7 +484,8 @@ section:nth-of-type(9) ul{
 	padding-left: 3em;
 	margin-left: 3em;
 	margin-right: 3em;
-	margin-top: 5em;
+	margin-top: 50em;
+  margin-bottom: 10em;
     border-radius: 0.5em;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 	list-style-type: none;

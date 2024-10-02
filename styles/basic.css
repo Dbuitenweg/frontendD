@@ -65,13 +65,15 @@
     justify-content: start;
     list-style: none;
     margin: 0;
-    padding: 0;
+    
   }
   
   nav ul li {
-    margin: 0 15px;
-    font-size: 20px;
-    font-weight: 200;
+    font-size: 1.4rem;
+        line-height: 1.4444444444;
+        font-weight: 400;
+        font-family: "UniversalSansTextRegular";
+        padding-right: 1em;
   }
   
   nav ul li a {
@@ -93,13 +95,16 @@
   }
   
   button {
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color:#c2dbea ;
       color: #0e578c;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     box-shadow: 1.5px 1.5px 1.5px  rgba(0, 0, 0, 0.3);
+    font-size: 1.25rem;
+    line-height: 1.75;
+    font-family: "UniversalSansTextBold";
   }
   
     body{
