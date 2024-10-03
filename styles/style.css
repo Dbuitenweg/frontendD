@@ -20,15 +20,11 @@
 
 
 
-section:first-child {
-  margin: 0;
-
-}
 
 section:first-child > nav ul{
   display: flex;
     justify-content: center;
-    margin-right: 45em;
+    margin-right: 43%;
 
 }
 
@@ -93,22 +89,21 @@ transition: 0.3s;
 
 
 /* formulier2 */
-section:nth-of-type(2){
-  display: flex;
-  justify-content: center;
+section:nth-of-type(1){
+
 
 }
 
 
-section:nth-of-type(2) form {
+section:nth-of-type(1) form {
   border-radius: 1em;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 6px 1px rgba(0, 0, 0, 0.2);
   padding: 1em;
   margin: 1em;
-  width: 75em;
+  width: 80%;
 }
 
-section:nth-of-type(2) input
+section:nth-of-type(1) input
  {
   padding: 1em;
   text-decoration: #000;
@@ -119,18 +114,18 @@ section:nth-of-type(2) input
     font-family: "UniversalSansTextRegular";
     font-weight: 400;
 }
-section:nth-of-type(2) input[name="departure"],
-section:nth-of-type(2) input[name="destination"]{
+section:nth-of-type(1) input[name="departure"],
+section:nth-of-type(1) input[name="destination"]{
   width: 38%;
 }
 
-section:nth-of-type(2) input[name="departure-date" ],
-section:nth-of-type(2) input[name="return-date"]{
+section:nth-of-type(1) input[name="departure-date" ],
+section:nth-of-type(1) input[name="return-date"]{
   width: 35%;
   
 }
 
-section:nth-of-type(2) select{
+section:nth-of-type(1) select{
   padding: 1em;
   padding-right: 4em;
   text-decoration: #000;
@@ -142,10 +137,10 @@ section:nth-of-type(2) select{
     font-weight: 400;
 }
 
-section:nth-of-type(2) form button{
+section:nth-of-type(1) form button{
   display: flex;
   float: right;
-  margin-top: 5em;
+  margin-top: 2em;
 }
 
 
@@ -158,7 +153,7 @@ section:nth-of-type(2) form button{
 
 
 
-section:nth-of-type(3) h2 {
+section:nth-of-type(2) h2 {
   font-size: 1.75em;
   line-height: 1.5;
   font-weight: 500;
@@ -166,7 +161,7 @@ section:nth-of-type(3) h2 {
   font-family: "UniversalSansDisplayMedium";
 }
 
-section:nth-of-type(3) ul {
+section:nth-of-type(2) ul {
   border-bottom: solid rgb(239, 239, 239);
   padding-bottom: 1em;
 }
@@ -175,19 +170,19 @@ section:nth-of-type(3) ul {
 
 /* new york-5 */
 
-section:nth-of-type(3){
+section:nth-of-type(2){
   display: grid;
   justify-content: center;
   justify-items: start;
   margin-right: -5em;
 }
 
-section:nth-of-type(3) h2{
+section:nth-of-type(2) h2{
   
 }
 
 
-section:nth-of-type(3) table {
+section:nth-of-type(2) table {
 
 }
 
@@ -204,7 +199,7 @@ span{
   margin-left: -5em;
 }
 
-section:nth-of-type(3) img{
+section:nth-of-type(2) img{
   order: -1;
 } 
 td {
@@ -227,7 +222,7 @@ table a:hover{
   background-color: lightgray;
 }
 
-section:nth-of-type(3) button{
+section:nth-of-type(2) button{
   margin-top: 1em;
 }
 
@@ -235,13 +230,13 @@ section:nth-of-type(3) button{
 
 /* blijf op de hoogte-6 */
 
-section:nth-of-type(5){
+section:nth-of-type(3){
   display: grid;
   justify-content: center;
   
 }
 
-section:nth-of-type(5)  > h2:first-child {
+section:nth-of-type(3)  > h2:first-child {
   margin-left: 2em;
   margin-top: 3em;
   margin-bottom: 0em;
@@ -252,7 +247,7 @@ section:nth-of-type(5)  > h2:first-child {
   letter-spacing: normal;
 }
 
-section:nth-of-type(5) a > h2:first-child{
+section:nth-of-type(3) a > h2:first-child{
   padding-left: 1em;
   font-size: 1.125rem;
   line-height: 1.4444444444;
@@ -261,7 +256,7 @@ font-weight: 500;
 letter-spacing: normal;   
 }
 
-section:nth-of-type(5) ul{
+section:nth-of-type(3) ul{
   /* display: flex;
   overflow-x: auto;
   gap: 2em;
@@ -271,14 +266,13 @@ section:nth-of-type(5) ul{
   grid-template-columns: 500px 500px;
 }
 
-section:nth-of-type(5) ul::-webkit-scrollbar {
+section:nth-of-type(3) ul::-webkit-scrollbar {
   display: none;
 }
 
-section:nth-of-type(5) li {
+section:nth-of-type(3) li {
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
   width: 30em;
-  min-width: 25em;
   padding-left: 0;
   margin-left: 1em;
   border-radius: 1em;
@@ -290,13 +284,13 @@ section:nth-of-type(5) li {
  
 }
 
-section:nth-of-type(5) a{
+section:nth-of-type(3) a{
   text-decoration: none;
   color: #000;
   display: flex;
   flex-direction: column;
 }
-section:nth-of-type(5) a:hover{
+section:nth-of-type(3) a:hover{
   text-decoration: none;
   color: #000;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
@@ -304,13 +298,13 @@ transition: 0.3s;
 border-radius: 1em;
 }
 
-section:nth-of-type(5) img {
+section:nth-of-type(3) img {
   width: 100%;
   border-radius: 1em;
   order: -1;
 }
 
-section:nth-of-type(5) p {
+section:nth-of-type(3) p {
   margin-top: -1em;
   padding: 0em 1em 0em 1em;
   font-size: .875rem;
@@ -325,7 +319,7 @@ section:nth-of-type(5) p {
 /****************/
 
 /* op zoek naar meer dan eenvlucht?-12 */
-section:nth-of-type(6){
+section:nth-of-type(4){
   display: flex;
   flex-direction: column;
   align-items: center; 
@@ -336,7 +330,7 @@ section:nth-of-type(6){
 
 
 
-section:nth-of-type(6) > h2:first-child {
+section:nth-of-type(4) > h2:first-child {
 margin-left: -3em;
 margin-top: 3em;
 display: flex;
@@ -344,13 +338,13 @@ justify-content: center;
 margin-right: 20em;
 }
 
-section:nth-of-type(6) ul{
+section:nth-of-type(4) ul{
   display:flex;
   justify-content: center;
   gap: 2em;
 }
 
-section:nth-of-type(6) li{
+section:nth-of-type(4) li{
   list-style-type: none; 
   justify-content: start;
   width: 13em;
@@ -362,7 +356,7 @@ section:nth-of-type(6) li{
   display: flex;
 }
 
-section:nth-of-type(6) a{
+section:nth-of-type(4) a{
   text-decoration: none;
   color: #000;
   display: flex;
@@ -370,23 +364,23 @@ section:nth-of-type(6) a{
 }
 
 
-section:nth-of-type(6) ul img {
+section:nth-of-type(4) ul img {
   width: 70%;
 border-radius: 1em;
 order: -1;
 }
 
-section:nth-of-type(6) ul h2 {
+section:nth-of-type(4) ul h2 {
   margin-left: 1em;
   margin-top: 0;
 }
 
 
-section:nth-of-type(6) p {
+section:nth-of-type(4) p {
   padding-bottom: 1em;
   padding-left: 1em;
 }
-section:nth-of-type(6) button{
+section:nth-of-type(4) button{
   margin-top:0; 
   display: block;
   position: absolute;
@@ -399,7 +393,7 @@ section:nth-of-type(6) button{
 
 /* Laat u inspireren-8 */
 
-section:nth-of-type(7) > h2:first-child{
+section:nth-of-type(5) > h2:first-child{
   
   margin-top: 9em;
   display: flex;
@@ -407,7 +401,7 @@ section:nth-of-type(7) > h2:first-child{
   margin-right: 30em;
   }
 
-  section:nth-of-type(7) > h3:nth-of-type(1){
+  section:nth-of-type(5) > h3:nth-of-type(1){
   
   margin-top: -1em;
   display: flex;
@@ -418,7 +412,7 @@ section:nth-of-type(7) > h2:first-child{
 
 
 /* jouw code */
-section:nth-of-type(8){
+section:nth-of-type(6){
 	display: flex;
   flex-direction: column;
   align-items: center; 
@@ -427,13 +421,13 @@ section:nth-of-type(8){
  
 }
 
-section:nth-of-type(8) ul{
+section:nth-of-type(6) ul{
   display: grid;
   grid-template-columns: 510px 320px;
   margin-right: 10em;
 }
 
-section:nth-of-type(8) li{
+section:nth-of-type(6) li{
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -444,12 +438,12 @@ section:nth-of-type(8) li{
 	text-shadow: 0 8px 8px rgba(0, 0, 0, .08);
 }
 
-section:nth-of-type(8) li section{
+section:nth-of-type(6) li section{
   position: absolute;
   margin-left:14em ;
 }
 
-section:nth-of-type(8) ul li img{
+section:nth-of-type(6) ul li img{
 	width:30em ;
 	border-radius: 0.5em;
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
@@ -457,7 +451,7 @@ section:nth-of-type(8) ul li img{
 
 }
 
-section:nth-of-type(8) button{
+section:nth-of-type(6) button{
   margin-top:0; 
   display: block;
   position: absolute;
@@ -470,12 +464,12 @@ section:nth-of-type(8) button{
 
 /* op zoek naar speciale aanbiedingen? */
 
-section:nth-of-type(9){
+section:nth-of-type(7){
   display: flex;
   justify-content: center;
 }
 
-section:nth-of-type(9) ul{
+section:nth-of-type(7) ul{
   max-width: 1000px;
 	display: flex;
     justify-content: space-between;
@@ -492,20 +486,20 @@ section:nth-of-type(9) ul{
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 2px 6px 1px rgba(0, 0, 0, 0.2);
 }
 
-section:nth-of-type(9) li h2:first-child{
+section:nth-of-type(7) li h2:first-child{
 	margin-bottom: 0.5em;
 }
 
 
 
-section:nth-of-type(9) li h2:first-child,section:nth-of-type(9) li h3:nth-of-type(1){
+section:nth-of-type(7) li h2:first-child,section:nth-of-type(7) li h3:nth-of-type(1){
 	color: #072b45;
 	font-size: 1rem;
 	line-height: 1.5;
 	font-weight: 400;
 }
 
-section:nth-of-type(9) li button:first-child{
+section:nth-of-type(7) li button:first-child{
 	padding: 1em 2em;
 	margin-right: 1.5em;
     background-color: #ffffff;
@@ -517,6 +511,222 @@ section:nth-of-type(9) li button:first-child{
 	margin-left: 2em;
 }
 
-section:nth-of-type(9) li button:first-child:hover{
+section:nth-of-type(7) li button:first-child:hover{
 	background-color:#d6e2ec;
+}
+
+
+
+
+@media (max-width: 950px){
+  section:first-child section:nth-of-type(1) {
+    width: 95%;
+    margin-left:0;
+    margin-top: -3em;
+    opacity: 100;
+}
+section:first-child nav{
+  margin-top: 10em;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+span {
+  display: flex;
+  margin-left: -1em;
+}
+
+section:nth-of-type(3) ul {
+  display: grid;
+  grid-template-columns: 411px 410px;
+}
+
+section:nth-of-type(3) > h2:first-child{
+  display: flex;
+  justify-content: center;
+  margin-right: 35%;
+}
+
+section:nth-of-type(3) ul {
+ display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section:nth-of-type(4) > h2:first-child {
+  display: flex;
+  justify-content: center;
+  margin-right: 5%;
+}
+
+section:nth-of-type(4) ul {
+  display: grid;
+  grid-template-columns: 194px 216px;
+}
+
+section:nth-of-type(4) button{
+  bottom: -28em;
+  margin-right: 0;
+}
+
+section:nth-of-type(5) > h2:first-child {
+  top: 15em;
+  position: relative;
+  right: -8em;
+}
+
+section:nth-of-type(5) > h3:nth-of-type(1){
+  top: 20em;
+  position: relative;
+  right: -10em;
+}
+
+section:nth-of-type(6) ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top:22em;
+  margin-right: -6%;
+}
+
+section:nth-of-type(6) button{
+  bottom: -77em;
+  right: -7.5em;
+}
+
+section:nth-of-type(7){
+  margin-top: 50em;
+}
+
+}
+
+@media (max-width: 480px){
+  nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section:first-child figure{
+    margin-top: 9em;
+    width: 100%;
+    margin-left: 1em;
+  }
+
+  section:first-child section:nth-of-type(1){
+    margin-top: 2em;
+    top: 25em;
+  }
+
+  section:first-child section:nth-of-type(1) a{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 5em;
+  }
+
+  section:first-child > nav ul{
+    margin-top: 18em;
+  }
+
+  section:first-child > nav li{
+    padding: 0.5em;
+  }
+
+  section:nth-of-type(1) input[name="departure"], section:nth-of-type(1) input[name="destination"]{
+    width: 90%;
+  }
+
+  section:nth-of-type(1) input[name="departure-date" ], section:nth-of-type(1) input[name="return-date"]{
+    width: 90%;
+  }
+
+  section:nth-of-type(2) h2{
+    margin-top: 3em;
+    margin-left: 4em;
+  }
+
+  td{
+    display: flex;
+    justify-content: center;
+    margin-left: 6em;
+  }
+
+  span:nth-of-type(1){
+    position: absolute;
+  }
+
+  span:nth-of-type(2){
+    margin-top: 3em;
+  }
+
+  section:nth-of-type(2) button{
+    margin-right: 2em;
+    position: relative;
+    margin-left: 5em;
+}
+
+section:nth-of-type(3) > h2:first-child{
+  margin-left: 6em;
+}
+
+section:nth-of-type(3) li{
+width: 90%;
+}
+
+section:nth-of-type(4) > h2:first-child{
+  margin-left: 2em;
+}
+
+section:nth-of-type(4) ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section:nth-of-type(4) button{
+  bottom: -69em;
+  left: 11em;
+}
+
+section:nth-of-type(5) > h2:first-child{
+  top: 50em;
+  margin-right: 3em;
+  left: -2em;
+}
+
+section:nth-of-type(5) > h3:nth-of-type(1){
+  top: 65em;
+  margin-right: 3em;
+  left: 1em;
+
+}
+
+section:nth-of-type(6) ul{
+  margin-top: 75em;
+}
+
+section:nth-of-type(6) ul li img{
+  width: 17em;
+}
+
+section:nth-of-type(6) li section{
+  position: absolute;
+    margin-left: 8em;
+}
+
+section:nth-of-type(6) li section h2{
+  margin-bottom: -1em;
+}
+
+section:nth-of-type(6) button{
+  bottom: -88.5em;
+  right: -20.5em;
+}
+
+
+section:nth-of-type(7){
+  margin-top: 66em;
+}
+
 }
