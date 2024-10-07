@@ -1,10 +1,4 @@
-/* h2{
-font-family: "UniversalSans-Display-Medium";
-}
 
-p{
-font-family: "UniversalSans-Text-Regular";
-} */
 section:first-child {
 margin-left: 15%;
 margin-top: 15em;
@@ -13,8 +7,7 @@ margin-top: 15em;
 
 section:first-child p{
 font-size: 1.125rem;
-line-height: 1.444;
-font-weight: 400; 
+line-height: 1.444; 
 }
 
 /* bagage */
@@ -23,8 +16,6 @@ section:nth-of-type(2) > h2:first-child{
 margin-left: 15%;
 font-size: 1.125em;
 line-height: 1.44;
-font-weight: 500;
-font-family: "UniversalSans-Display-Medium";    
 }
 
 section:nth-of-type(2) ul{
@@ -52,18 +43,14 @@ background-color: var(--w);
 
 section:nth-of-type(2) ul h2:nth-of-type(1){
 padding-left: 1em;
-font-family: "UniversalSans-Display-Medium";
 font-size: 1.125rem;
 line-height: 1.44;
-font-weight: 500;
 }
 
 section:nth-of-type(2) p{
 font-size: 1rem;
 line-height: 1.5;
-font-weight: 400;
 letter-spacing: normal;
-font-family: "UniversalSans-Text-Regular";
 }
 
 section:nth-of-type(2) h2,p{
@@ -88,9 +75,7 @@ border-top-left-radius:0.5em ;
 /* maak u klaar voor vertrek */
 section:nth-of-type(3) > h2:first-child{
 font-size: 1.125em;
-line-height: 1.44;
-font-weight: 500;
-font-family: "UniversalSans-Display-Medium";  
+line-height: 1.44; 
 margin-left: 15%; 
 margin-top: 2em;
 }
@@ -122,18 +107,14 @@ background-color: var(--w);
 
 section:nth-of-type(3) ul h2:nth-of-type(1){
 padding-left: 1em;
-font-family: "UniversalSans-Display-Medium";
 font-size: 1.125rem;
 line-height: 1.44;
-font-weight: 500;
 }
 
 section:nth-of-type(3) p{
 font-size: 1rem;
 line-height: 1.5;
-font-weight: 400;
 letter-spacing: normal;
-font-family: "UniversalSans-Text-Regular";
 }
 
 section:nth-of-type(3) h2,p{
@@ -162,8 +143,6 @@ border-top-left-radius:0.5em ;
 section:nth-of-type(4) > h2:first-child{
 font-size: 1.125em;
 line-height: 1.44;
-font-weight: 500;
-font-family: "UniversalSans-Display-Medium"; 
 margin-left: 15%; 
 margin-top: 2em;
 }
@@ -193,19 +172,14 @@ background-color: var(--w);
 
 section:nth-of-type(4) ul h2:nth-of-type(1){
 padding-left: 1em;
-font-family: "UniversalSans-Display-Medium";
 font-size: 1.125rem;
 line-height: 1.44;
-font-weight: 500;
 }
 
 section:nth-of-type(4) p{
 font-size: 1rem;
 line-height: 1.5;
-font-weight: 400;
 letter-spacing: normal;
-font-family: "UniversalSans-Text-Regular";
-
 }
 
 section:nth-of-type(4) h2,p{
@@ -229,11 +203,8 @@ margin-bottom: 5em;
 section:nth-of-type(5)> h2:first-of-type{
 font-size: 1.125em;
 line-height: 1.44;
-font-weight: 500;
-font-family: "UniversalSans-Display-Medium"; 
 margin-left: 15%;
 margin-top: 2em;
-
 }
 
 section:nth-of-type(5) ul{
@@ -260,10 +231,8 @@ background-color: var(--w);
 
 section:nth-of-type(5) ul h2:nth-of-type(1){
 padding-left: 1em;
-font-family: "UniversalSans-Display-Medium";
 font-size: 1.125rem;
 line-height: 1.44;
-font-weight: 500;
 }
 
 section:nth-of-type(5) h2,p{
@@ -274,11 +243,8 @@ padding-right: 1em;
 section:nth-of-type(5) p{
 font-size: 1rem;
 line-height: 1.5;
-font-weight: 400;
 letter-spacing: normal;
-font-family: "UniversalSans-Text-Regular";
 padding-right: 1em;
-
 }
 
 section:nth-of-type(5) ul li{
