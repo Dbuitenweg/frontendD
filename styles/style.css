@@ -21,17 +21,10 @@ header nav ul {
 
 
 
-
+/* foto */
 main > section:first-child{
 display: grid;
 background-color: #fff;
-}
-
-
-section:first-child > nav ul{
-display: flex;
-justify-content: center;
-margin-right: 43%;
 }
 
 section:first-child figure{
@@ -41,7 +34,7 @@ grid-column-start: 1;
 
 section:first-child img {
 width: 100%;
-height: 30em;
+height: auto;
 object-fit: cover;
 display: block;
 }
@@ -95,8 +88,8 @@ transition: 0.3s;
 
 
 
-/* formulier2 */
-section:nth-of-type(1) form {
+/* Een vlucht boeken 2 */
+section:nth-of-type(2) form {
 border-radius: 1em;
 box-shadow: 0 1px 2px var(--box-sh), 0 2px 6px 1px var(--box-sh);
 padding: 1em;
@@ -105,7 +98,7 @@ width: 80%;
 background-color: var(--w);
 }
 
-section:nth-of-type(1) input
+section:nth-of-type(2) input
 {
 padding: 1em;
 text-decoration: var(--zwart);
@@ -115,18 +108,18 @@ font-size: 1rem;
 line-height: 1.5;
 }
 
-section:nth-of-type(1) input[name="departure"],
-section:nth-of-type(1) input[name="destination"]{
+section:nth-of-type(2) input[name="departure"],
+section:nth-of-type(2) input[name="destination"]{
 width: 38%;
 color: var(--w);
 }
 
-section:nth-of-type(1) input[name="departure-date" ],
-section:nth-of-type(1) input[name="return-date"]{
+section:nth-of-type(2) input[name="departure-date" ],
+section:nth-of-type(2) input[name="return-date"]{
 width: 35%;
 }
 
-section:nth-of-type(1) select{
+section:nth-of-type(2) select{
 padding: 1em;
 padding-right: 4em;
 text-decoration: var(--zwart);
@@ -136,40 +129,18 @@ font-size: 1rem;
 line-height: 1.5;
 }
 
-section:nth-of-type(1) form button{
+section:nth-of-type(2) form button{
 display: flex;
 float: right;
 margin-top: 2em;
 }
 
 
-/* Het zijn weer real deals dagen!3 */
+/* Bestemming en deals 3 */
 
-
-
-
-/* Bestemmingen en Deals4 */
-
-
-
-section:nth-of-type(2) h2 {
-font-size: 1.75em;
-line-height: 1.5;
-letter-spacing: normal;
-}
-
-section:nth-of-type(2) ul {
-border-bottom: solid var(--s2-ul);
-padding-bottom: 1em;
-}
-
-/* new york-5 */
-
-section:nth-of-type(2){
+section:nth-of-type(3){
 display: grid;
 justify-content: center;
-justify-items: start;
-margin-right: -5em;
 }
 
 table {
@@ -183,7 +154,6 @@ border-bottom: solid 1px var(--lg);
 
 table span{
 display: flex;
-margin-left: -5em;
 }
 
 section:nth-of-type(2) img{
@@ -209,20 +179,20 @@ table a:hover{
 background-color: var(--lg);
 }
 
-section:nth-of-type(2) button{
-margin-top: 1em;
+section:nth-of-type(3) button{
+  justify-self: baseline;
 }
 
 
 
-/* blijf op de hoogte-6 */
+/* blijf op de hoogte-4 */
 
-section:nth-of-type(3){
+section:nth-of-type(4){
 display: grid;
 justify-content: center;
 }
 
-section:nth-of-type(3)  > h2:first-child {
+section:nth-of-type(4)  > h2:first-child {
 margin-left: 2em;
 margin-top: 3em;
 margin-bottom: 0em;
@@ -231,14 +201,14 @@ line-height: 1.5;
 letter-spacing: normal;
 }
 
-section:nth-of-type(3) a > h2:first-child{
+section:nth-of-type(4) a > h2:first-child{
 padding-left: 1em;
 font-size: 1.125rem;
 line-height: 1.4444444444;
 letter-spacing: normal;   
 }
 
-section:nth-of-type(3) ul{
+section:nth-of-type(4) ul{
 /* display: flex;
 overflow-x: auto;
 gap: 2em;
@@ -248,11 +218,11 @@ display: grid;
 grid-template-columns: 500px 500px;
 }
 
-section:nth-of-type(3) ul::-webkit-scrollbar {
+section:nth-of-type(4) ul::-webkit-scrollbar {
 display: none;
 }
 
-section:nth-of-type(3) li {
+section:nth-of-type(4) li {
 box-shadow: 0 1px 2px var(--box-sh), 0 2px 6px 1px var(--box-sh);
 width: 30em;
 padding-left: 0;
@@ -266,7 +236,7 @@ scroll-snap-align: center;
 
 }
 
-section:nth-of-type(3) a{
+section:nth-of-type(4) a{
 text-decoration: none;
 color: var(--zwart);
 display: flex;
@@ -274,7 +244,7 @@ flex-direction: column;
 background-color: var(--w);
 border-radius: 1em;
 }
-section:nth-of-type(3) a:hover{
+section:nth-of-type(4) a:hover{
 text-decoration: none;
 color: var(--zwart);
 box-shadow: 0 1px 2px var(--box-sh), 0 2px 6px 1px var(--box-sh);
@@ -282,13 +252,13 @@ transition: 0.3s;
 border-radius: 1em;
 }
 
-section:nth-of-type(3) img {
+section:nth-of-type(4) img {
 width: 100%;
 border-radius: 1em;
 order: -1;
 }
 
-section:nth-of-type(3) p {
+section:nth-of-type(4) p {
 margin-top: -1em;
 padding: 0em 1em 0em 1em;
 font-size: .875rem;
@@ -296,36 +266,27 @@ line-height: 1.5714285714;
 letter-spacing: normal;
 }
 
-/****************/
-/* JOUW STYLING */
-/****************/
 
-/* op zoek naar meer dan eenvlucht?-12 */
-section:nth-of-type(4){
-display: flex;
-flex-direction: column;
-align-items: center; 
-position: relative;
-height: 42vh;
+/* op zoek naar meer dan eenvlucht?-5 */
+section:nth-of-type(5){
+  display: grid;
+  justify-content: center;
 }
 
 
 
-section:nth-of-type(4) > h2:first-child {
-margin-left: -3em;
-margin-top: 3em;
-display: flex;
-justify-content: center;
-margin-right: 20em;
+section:nth-of-type(5) > h2:first-child {
+display: grid;
+justify-content: start;
 }
 
-section:nth-of-type(4) ul{
+section:nth-of-type(5) ul{
 display:flex;
 justify-content: center;
 gap: 2em;
 }
 
-section:nth-of-type(4) li{
+section:nth-of-type(5) li{
 list-style-type: none; 
 justify-content: start;
 width: 13em;
@@ -337,7 +298,7 @@ background-color: var(--s4-li);
 display: flex;
 }
 
-section:nth-of-type(4) a{
+section:nth-of-type(5) a{
 text-decoration: none;
 color: var(--zwart);
 display: flex;
@@ -345,66 +306,47 @@ flex-direction: column;
 }
 
 
-section:nth-of-type(4) ul img {
+section:nth-of-type(5) ul img {
 width: 70%;
 border-radius: 1em;
 order: -1;
 }
 
-section:nth-of-type(4) ul h2 {
+section:nth-of-type(5) ul h2 {
 margin-left: 1em;
 margin-top: 0;
 }
 
 
-section:nth-of-type(4) p {
+section:nth-of-type(5) p {
 padding-bottom: 1em;
 padding-left: 1em;
 }
-section:nth-of-type(4) button{
-margin-top:0; 
-display: block;
-position: absolute;
-bottom: -8.5em; 
-margin-right: 27em; 
-transform: translateX(-50%);
+section:nth-of-type(5) button{
 padding: 1em 2em;
+justify-self: baseline;
 }
 
 
-/* Laat u inspireren-8 */
+/* Laat u inspireren-6 */
 
-section:nth-of-type(5) > h2:first-child{
-
-margin-top: 9em;
-display: flex;
-justify-content: center;
-margin-right: 30em;
+section:nth-of-type(6) > h2:first-child{
+  justify-self: baseline;
 }
 
-section:nth-of-type(5) > h3:nth-of-type(1){
-
-margin-top: -1em;
-display: flex;
-justify-content: center;
-margin-right: 30em;
+section:nth-of-type(6) > h3:nth-of-type(1){
+  justify-self: baseline;
 }
 
 
-
-/* jouw code */
 section:nth-of-type(6){
-display: flex;
-flex-direction: column;
-align-items: center; 
-position: relative;
-height: 42vh;
+  display: grid;
+  justify-content: center;
 }
 
 section:nth-of-type(6) ul{
 display: grid;
-grid-template-columns: 510px 320px;
-margin-right: 10em;
+grid-template-columns: 515px 515px;
 }
 
 section:nth-of-type(6) li{
@@ -412,32 +354,26 @@ position: relative;
 display: flex;
 flex-direction: column;
 justify-content: flex-end;
-align-items: baseline;
+align-items:center;
 padding: 1em;
-text-align: center;
 text-shadow: 0 8px 8px var(--t-sha);
 }
 
 section:nth-of-type(6) li section{
 position: absolute;
-margin-left:14em ;
+text-align: center;
+
 }
 
 section:nth-of-type(6) ul li img{
 width:30em ;
 border-radius: 0.5em;
 box-shadow: 0 1px 2px var(--box-sh), 0 2px 6px 1px var(--box-sh);
-margin-right: 2em;
 }
 
 section:nth-of-type(6) button{
-margin-top:0; 
-display: block;
-position: absolute;
-bottom: -35em; 
-margin-right: 14em; 
-transform: translateX(-50%);
 padding: 1em 2em;
+justify-self: baseline;
 }
 
 
@@ -456,10 +392,6 @@ justify-content: space-between;
 align-items: center;
 padding: 1em;
 padding-left: 3em;
-margin-left: 3em;
-margin-right: 3em;
-margin-top: 50em;
-margin-bottom: 10em;
 border-radius: 0.5em;
 box-shadow: 0 1px 2px var(--box-sh), 0 2px 6px 1px var(--box-sh);
 list-style-type: none;
@@ -481,13 +413,13 @@ font-weight: 400;
 
 section:nth-of-type(7) li button:first-child{
 padding: 1em 2em;
-margin-right: 1.5em;
+
 color: var(--button);
 border:solid thin var(--button);
 cursor: pointer;
 font-size: 16px;
 border-radius: 5px;
-margin-left: 2em;
+
 }
 
 section:nth-of-type(7) li button:first-child:hover{
