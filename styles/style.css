@@ -89,12 +89,17 @@ transition: 0.3s;
 
 
 /* Een vlucht boeken 2 */
+
+section:nth-of-type(2){
+  display: grid;
+  justify-content: center;
+}
 section:nth-of-type(2) form {
 border-radius: 1em;
 box-shadow: 0 1px 2px var(--box-sh), 0 2px 6px 1px var(--box-sh);
 padding: 1em;
 margin: 1em;
-width: 80%;
+width: 90%;
 background-color: var(--w);
 }
 
@@ -138,50 +143,66 @@ margin-top: 2em;
 
 /* Bestemming en deals 3 */
 
-section:nth-of-type(3){
-display: grid;
-justify-content: center;
+section:nth-of-type(3) {
+  display: grid;
+  justify-content: center;
+}
+
+section:nth-of-type(3) h2{
+  align-self: baseline;
 }
 
 table {
-border-collapse: collapse;
-width: 1000px;
+  border-collapse: collapse;
+  width: 100%; 
+  max-width: 1000px;
+  margin: auto;
 }
-
-tr{
-border-bottom: solid 1px var(--lg); 
-}
-
-table span{
-display: flex;
-}
-
-section:nth-of-type(2) img{
-order: -1;
-} 
 
 td {
-padding: 10px;
-text-align: left;
+  padding: 10px;
+  text-align: left; 
 }
 
+tr {
+  border-bottom: solid 1px var(--lg);
+}
 
-tr:hover{
-background-color: var(--tr-h);
+table span {
+  display: flex;
+}
+
+td img {
+  border-radius: 5px;
+}
+
+td:first-child {
+  display: flex;
+  justify-content: flex-end;
+}
+
+tr:hover {
+  background-color: var(--tr-h);
 }
 
 table a {
-text-decoration: none;
-color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
-table a:hover{
-background-color: var(--lg);
+table a:hover {
+  background-color: var(--lg);
 }
 
-section:nth-of-type(3) button{
+section:nth-of-type(3) p{
+  width: 62.5em;
+  justify-self: center;
+}
+
+section:nth-of-type(3) button {
   justify-self: baseline;
 }
+
 
 
 
