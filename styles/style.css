@@ -305,18 +305,20 @@ section:nth-of-type(5) ul{
 display:flex;
 justify-content: center;
 gap: 2em;
+padding: 0;
+
+
 }
 
 section:nth-of-type(5) li{
 list-style-type: none; 
 justify-content: start;
 width: 13em;
-padding-left: 0;
-margin-left: 1em;
 border-radius: 1em;
-margin-bottom: 2em;
 background-color: var(--s4-li);
 display: flex;
+text-align: center;
+padding: 0.5em;
 }
 
 section:nth-of-type(5) a{
@@ -334,14 +336,12 @@ order: -1;
 }
 
 section:nth-of-type(5) ul h2 {
-margin-left: 1em;
-margin-top: 0;
+
 }
 
 
 section:nth-of-type(5) p {
-padding-bottom: 1em;
-padding-left: 1em;
+
 }
 section:nth-of-type(5) button{
 padding: 1em 2em;
@@ -353,10 +353,13 @@ justify-self: baseline;
 
 section:nth-of-type(6) > h2:first-child{
   justify-self: baseline;
+  padding-top: 2em;
+  margin: 0;
 }
 
 section:nth-of-type(6) > h3:nth-of-type(1){
   justify-self: baseline;
+  margin: 0;
 }
 
 
@@ -368,6 +371,7 @@ section:nth-of-type(6){
 section:nth-of-type(6) ul{
 display: grid;
 grid-template-columns: 515px 515px;
+padding: 0;
 }
 
 section:nth-of-type(6) li{
@@ -376,7 +380,8 @@ display: flex;
 flex-direction: column;
 justify-content: flex-end;
 align-items:center;
-padding: 1em;
+padding-top: 1em;
+padding-left: 0;
 text-shadow: 0 8px 8px var(--t-sha);
 }
 
@@ -412,7 +417,6 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 1em;
-padding-left: 3em;
 border-radius: 0.5em;
 box-shadow: 0 1px 2px var(--box-sh), 0 2px 6px 1px var(--box-sh);
 list-style-type: none;
@@ -453,84 +457,122 @@ color:var(--s7b);
 @media (max-width: 950px){
 section:first-child section:nth-of-type(1) {
 width: 95%;
-margin-left:0;
-margin-top: -3em;
 opacity: 100;
+justify-self: center;
 }
-section:first-child nav{
-margin-top: 10em;
+section:first-child figure{
+  margin-top: 8em;
 }
-
-table {
-border-collapse: collapse;
-width: 90%;
+section:first-child section:nth-of-type(1) h2{
+  margin: 0;
 }
-
-span {
-display: flex;
-margin-left: -1em;
+section:first-child section:nth-of-type(1) h3{
+  margin: 0;
 }
 
-section:nth-of-type(3) ul {
-display: grid;
-grid-template-columns: 411px 410px;
+section:nth-of-type(3){
+  display: grid;
 }
 
-section:nth-of-type(3) > h2:first-child{
-display: flex;
-justify-content: center;
-margin-right: 35%;
+section:nth-of-type(3) h2{
+  display: grid;
+  justify-content: space-evenly;
 }
 
-section:nth-of-type(3) ul {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
+section:nth-of-type(3) td{
+  display: grid;
+  justify-content: center;
 }
+
+table, tr, td, th {
+  display: grid;
+  justify-content: space-evenly;
+  
+}
+
+/* Style de table rows als individuele kaarten */
+tr {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Plaats de afbeelding bovenaan en de rest eronder */
+td:first-child {
+  text-align: center; /* Centreer afbeeldingen op smalle schermen */
+  padding-bottom: 10px;
+}
+
+/* Style voor tekst binnen een "kaart" */
+td {
+  padding: 5px;
+}
+
+/* Maak de beschrijving binnen de cellen als individuele blokken */
+td span, td p {
+  display: block;
+}
+
+section:nth-of-type(3) p{
+  width: 80%;
+}
+
+section:nth-of-type(3) button {
+  width: 17em;
+}
+
+
 
 section:nth-of-type(4) > h2:first-child {
 display: flex;
-justify-content: center;
-margin-right: 5%;
+justify-content: start;
 }
 
 section:nth-of-type(4) ul {
 display: grid;
-grid-template-columns: 194px 216px;
+grid-template-columns: 342px 395px;
+}
+
+section:nth-of-type(4) li{
+  width: 20em;
 }
 
 section:nth-of-type(4) button{
-bottom: -28em;
-margin-right: 0;
+
 }
 
 section:nth-of-type(5) > h2:first-child {
-top: 15em;
 position: relative;
-right: -8em;
 }
 
+section:nth-of-type(5) ul{
+  display: grid;
+  grid-template-columns: 197px 448px;
+}
+
+
 section:nth-of-type(5) > h3:nth-of-type(1){
-top: 20em;
 position: relative;
-right: -10em;
+}
+
+section:nth-of-type(6){
+  padding: 0;
 }
 
 section:nth-of-type(6) ul {
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
-margin-top:22em;
-margin-right: -6%;
 }
 
-section:nth-of-type(6) button{
-bottom: -77em;
-right: -7.5em;
+section:nth-of-type(6) > h2:first-child {
+  justify-self: center;
+
 }
 
-section:nth-of-type(7){
-margin-top: 50em;
+section:nth-of-type(6) > h3:nth-of-type(1) {
+  justify-self: center;
+
 }
 }
 
@@ -540,8 +582,6 @@ header nav ul {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 60px;
-  right: 0;
   background-color: #fff;
   width: 100%;
 }
@@ -559,24 +599,18 @@ header nav ul {
 }
 /* test */
 section:first-child figure{
-margin-top: 9em;
 width: 100%;
-margin-left: 1em;
 }
 
 section:first-child section:nth-of-type(1){
-margin-top: 2em;
-top: 25em;
 }
 
 section:first-child section:nth-of-type(1) a{
 display: flex;
 justify-content: space-evenly;
-margin-left: 5em;
 }
 
 section:first-child > nav ul{
-margin-top: 18em;
 }
 
 section:first-child > nav li{
@@ -592,14 +626,12 @@ width: 90%;
 }
 
 section:nth-of-type(2) h2{
-margin-top: 3em;
-margin-left: 4em;
+
 }
 
 td{
 display: flex;
 justify-content: center;
-margin-left: 6em;
 }
 
 span:nth-of-type(1){
@@ -607,17 +639,17 @@ position: absolute;
 }
 
 span:nth-of-type(2){
-margin-top: 3em;
+
 }
 
 section:nth-of-type(2) button{
-margin-right: 2em;
+
 position: relative;
-margin-left: 5em;
+
 }
 
 section:nth-of-type(3) > h2:first-child{
-margin-left: 6em;
+
 }
 
 section:nth-of-type(3) li{
@@ -625,7 +657,7 @@ width: 90%;
 }
 
 section:nth-of-type(4) > h2:first-child{
-margin-left: 2em;
+
 }
 
 section:nth-of-type(4) ul{
@@ -634,25 +666,16 @@ flex-wrap: wrap;
 }
 
 section:nth-of-type(4) button{
-bottom: -69em;
-left: 11em;
+
 }
 
-section:nth-of-type(5) > h2:first-child{
-top: 50em;
-margin-right: 3em;
-left: -2em;
-}
-
-section:nth-of-type(5) > h3:nth-of-type(1){
-top: 65em;
-margin-right: 3em;
-left: 1em;
-
+section:nth-of-type(5) ul {
+  display: flex;
+  flex-direction: column;
 }
 
 section:nth-of-type(6) ul{
-margin-top: 75em;
+
 }
 
 section:nth-of-type(6) ul li img{
@@ -661,21 +684,22 @@ width: 17em;
 
 section:nth-of-type(6) li section{
 position: absolute;
-margin-left: 8em;
+
 }
 
 section:nth-of-type(6) li section h2{
-margin-bottom: -1em;
+
 }
 
 section:nth-of-type(6) button{
-bottom: -88.5em;
-right: -20.5em;
+
 }
 
 
-section:nth-of-type(7){
-margin-top: 66em;
+section:nth-of-type(7) ul{
+display: flex;
+flex-direction: column;
+
 }
 
 }
