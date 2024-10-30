@@ -103,8 +103,7 @@ width: 90%;
 background-color: var(--w);
 }
 
-section:nth-of-type(2) input
-{
+section:nth-of-type(2) input{
 padding: 1em;
 text-decoration: var(--zwart);
 border-radius: 5px;
@@ -213,28 +212,12 @@ display: grid;
 justify-content: center;
 }
 
-section:nth-of-type(4)  > h2:first-child {
-margin-left: 2em;
-margin-top: 3em;
-margin-bottom: 0em;
-font-size: 1.5rem;
-line-height: 1.5;
-letter-spacing: normal;
-}
 
 section:nth-of-type(4) a > h2:first-child{
-padding-left: 1em;
-font-size: 1.125rem;
-line-height: 1.4444444444;
-letter-spacing: normal;   
+padding-left: 1em;   
 }
 
 section:nth-of-type(4) ul{
-/* display: flex;
-overflow-x: auto;
-gap: 2em;
-scroll-snap-type: x mandatory;
-padding: 0; */
 display: grid;
 grid-template-columns: 500px 500px;
 }
@@ -280,11 +263,7 @@ order: -1;
 }
 
 section:nth-of-type(4) p {
-margin-top: -1em;
 padding: 0em 1em 0em 1em;
-font-size: .875rem;
-line-height: 1.5714285714;
-letter-spacing: normal;
 }
 
 
@@ -335,14 +314,6 @@ border-radius: 1em;
 order: -1;
 }
 
-section:nth-of-type(5) ul h2 {
-
-}
-
-
-section:nth-of-type(5) p {
-
-}
 section:nth-of-type(5) button{
 padding: 1em 2em;
 justify-self: baseline;
@@ -431,9 +402,6 @@ margin-bottom: 0.5em;
 
 section:nth-of-type(7) li h2:first-child,section:nth-of-type(7) li h3:nth-of-type(1){
 color: var(--db);
-font-size: 1rem;
-line-height: 1.5;
-font-weight: 400;
 }
 
 section:nth-of-type(7) li button:first-child{
@@ -442,7 +410,6 @@ padding: 1em 2em;
 color: var(--button);
 border:solid thin var(--button);
 cursor: pointer;
-font-size: 16px;
 border-radius: 5px;
 
 }
@@ -490,25 +457,21 @@ table, tr, td, th {
   
 }
 
-/* Style de table rows als individuele kaarten */
 tr {
   margin-bottom: 15px;
   border: 1px solid #ddd;
   text-align: center;
 }
 
-/* Plaats de afbeelding bovenaan en de rest eronder */
 td:first-child {
-  text-align: center; /* Centreer afbeeldingen op smalle schermen */
+  text-align: center; 
   padding-bottom: 10px;
 }
 
-/* Style voor tekst binnen een "kaart" */
 td {
   padding: 5px;
 }
 
-/* Maak de beschrijving binnen de cellen als individuele blokken */
 td span, td p {
   display: block;
 }
@@ -537,9 +500,6 @@ section:nth-of-type(4) li{
   width: 20em;
 }
 
-section:nth-of-type(4) button{
-
-}
 
 section:nth-of-type(5) > h2:first-child {
 position: relative;
@@ -602,15 +562,10 @@ section:first-child figure{
 width: 100%;
 }
 
-section:first-child section:nth-of-type(1){
-}
 
 section:first-child section:nth-of-type(1) a{
 display: flex;
 justify-content: space-evenly;
-}
-
-section:first-child > nav ul{
 }
 
 section:first-child > nav li{
@@ -625,9 +580,6 @@ section:nth-of-type(1) input[name="departure-date" ], section:nth-of-type(1) inp
 width: 90%;
 }
 
-section:nth-of-type(2) h2{
-
-}
 
 td{
 display: flex;
@@ -638,44 +590,25 @@ span:nth-of-type(1){
 position: absolute;
 }
 
-span:nth-of-type(2){
-
-}
 
 section:nth-of-type(2) button{
-
 position: relative;
-
-}
-
-section:nth-of-type(3) > h2:first-child{
-
 }
 
 section:nth-of-type(3) li{
 width: 90%;
 }
 
-section:nth-of-type(4) > h2:first-child{
-
-}
 
 section:nth-of-type(4) ul{
 display: flex;
 flex-wrap: wrap;
 }
 
-section:nth-of-type(4) button{
-
-}
 
 section:nth-of-type(5) ul {
   display: flex;
   flex-direction: column;
-}
-
-section:nth-of-type(6) ul{
-
 }
 
 section:nth-of-type(6) ul li img{
@@ -687,19 +620,9 @@ position: absolute;
 
 }
 
-section:nth-of-type(6) li section h2{
-
-}
-
-section:nth-of-type(6) button{
-
-}
-
-
 section:nth-of-type(7) ul{
 display: flex;
 flex-direction: column;
-
 }
 
 }
