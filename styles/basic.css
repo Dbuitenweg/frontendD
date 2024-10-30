@@ -104,14 +104,14 @@ margin: 0;
 }
 
 nav ul li {
-font-size: 1.4rem;
-line-height: 1.4444444444;
 padding-right: 1em;
 }
 
 nav ul li a {
 text-decoration: none;
 color: var(--zwart);
+font-size: 1.125rem;
+padding: 1em;
 }
 
 nav ul li a:active {
@@ -123,7 +123,6 @@ border-bottom: orangered solid thick;
 
 nav ul li a:hover {
 background-color: rgb(239, 239, 239);
-padding: 0.5em;
 margin: 0;
 }
 
