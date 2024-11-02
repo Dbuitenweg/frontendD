@@ -36,7 +36,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  [link naar de website die je gaat namaken óf de naam/omschrijving van je eigen ontwerp](https://www.klm.nl/)
+  (https://www.klm.nl/)
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   hier de naam van de pagina  
@@ -57,6 +57,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Bevindingen
   veel errors
+  alles hebben ze met div
   niet logiese namen gebruikt
 
 
@@ -107,7 +108,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1 : sanne heeft me gehopen met html netjes zetten
+  - punt 1 : structuren van de html
   - punt 2: 
   - nog een punt
   - ...
@@ -159,6 +160,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Bevindingen
   ik heb aantal layouts kunnen veranderen 
+  maken van tabelen
 
 </details>
 
