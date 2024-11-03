@@ -264,7 +264,7 @@ width: 15em;
 }
 }
 
-@media (max-width: 400px){
+@media (max-width: 550px){
 header nav ul {
 display: none;
 flex-direction: column;
